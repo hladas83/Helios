@@ -1,0 +1,150 @@
+30/03/2015 21:25:05 (Std) 	+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+30/03/2015 21:25:05 (Std) 	+                     Crazy Eddie's GUI System - Event log                    +
+30/03/2015 21:25:05 (Std) 	+                          (http://www.cegui.org.uk/)                         +
+30/03/2015 21:25:05 (Std) 	+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+30/03/2015 21:25:05 (Std) 	CEGUI::Logger singleton created. (006A9408)
+30/03/2015 21:25:06 (Std) 	
+30/03/2015 21:25:06 (Std) 	********************************************************************************
+30/03/2015 21:25:06 (Std) 	* Important:                                                                   *
+30/03/2015 21:25:06 (Std) 	*     To get support at the CEGUI forums, you must post _at least_ the section *
+30/03/2015 21:25:06 (Std) 	*     of this log file indicated below.  Failure to do this will result in no  *
+30/03/2015 21:25:06 (Std) 	*     support being given; please do not waste our time.                       *
+30/03/2015 21:25:06 (Std) 	********************************************************************************
+30/03/2015 21:25:06 (Std) 	********************************************************************************
+30/03/2015 21:25:06 (Std) 	* -------- START OF ESSENTIAL SECTION TO BE POSTED ON THE FORUM       -------- *
+30/03/2015 21:25:06 (Std) 	********************************************************************************
+30/03/2015 21:25:06 (Std) 	---- Version: 0.8.4 (Build: Jan  4 2015 Debug Microsoft Windows MSVC++ 11.0 32 bit) ----
+30/03/2015 21:25:06 (Std) 	---- Renderer module is: CEGUI::Direct3D11Renderer - Official Direct3D 11 based 2nd generation renderer module. ----
+30/03/2015 21:25:06 (Std) 	---- XML Parser module is: CEGUI::ExpatParser - Official expat based parser module for CEGUI ----
+30/03/2015 21:25:06 (Std) 	---- Image Codec module is: SILLYImageCodec - Official SILLY based image codec ----
+30/03/2015 21:25:06 (Std) 	---- Scripting module is: None ----
+30/03/2015 21:25:06 (Std) 	********************************************************************************
+30/03/2015 21:25:06 (Std) 	* -------- END OF ESSENTIAL SECTION TO BE POSTED ON THE FORUM         -------- *
+30/03/2015 21:25:06 (Std) 	********************************************************************************
+30/03/2015 21:25:06 (Std) 	
+30/03/2015 21:25:06 (Std) 	---- Begining CEGUI System initialisation ----
+30/03/2015 21:25:06 (Std) 	[CEGUI::ImageManager] Singleton created (006ABF78)
+30/03/2015 21:25:06 (Std) 	[CEGUI::ImageManager] Registered Image type: BasicImage
+30/03/2015 21:25:06 (Std) 	CEGUI::FontManager singleton created. (006ADB20)
+30/03/2015 21:25:06 (Std) 	CEGUI::WindowFactoryManager singleton created
+30/03/2015 21:25:06 (Std) 	CEGUI::WindowManager singleton created (006ADDE8)
+30/03/2015 21:25:06 (Std) 	CEGUI::SchemeManager singleton created. (006AE5F0)
+30/03/2015 21:25:06 (Std) 	CEGUI::GlobalEventSet singleton created. (006AE730)
+30/03/2015 21:25:06 (Std) 	CEGUI::AnimationManager singleton created (006AEAC0)
+30/03/2015 21:25:06 (Std) 	CEGUI::WidgetLookManager singleton created. (006B0D10)
+30/03/2015 21:25:06 (Std) 	CEGUI::WindowRendererManager singleton created (006AF060)
+30/03/2015 21:25:06 (Std) 	CEGUI::RenderEffectManager singleton created (006B1050)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'DefaultWindow' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'DefaultWindow' windows added. (006B2440)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'DragContainer' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'DragContainer' windows added. (006B2710)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'ScrolledContainer' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'ScrolledContainer' windows added. (006B28D0)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'ClippedContainer' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'ClippedContainer' windows added. (006B2A90)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/PushButton' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/PushButton' windows added. (006B2600)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/RadioButton' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/RadioButton' windows added. (006B2DE8)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Combobox' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Combobox' windows added. (006B3048)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ComboDropList' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ComboDropList' windows added. (006B3268)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Editbox' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Editbox' windows added. (006B14E8)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/FrameWindow' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/FrameWindow' windows added. (006B3510)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ItemEntry' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ItemEntry' windows added. (006B3740)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Listbox' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Listbox' windows added. (006B3E10)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ListHeader' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ListHeader' windows added. (006B3900)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ListHeaderSegment' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ListHeaderSegment' windows added. (006B3B60)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Menubar' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Menubar' windows added. (006B3FD0)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/PopupMenu' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/PopupMenu' windows added. (006B40A8)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/MenuItem' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/MenuItem' windows added. (006B4268)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/MultiColumnList' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/MultiColumnList' windows added. (006B4428)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/MultiLineEditbox' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/MultiLineEditbox' windows added. (006B45E8)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ProgressBar' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ProgressBar' windows added. (006B47A8)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ScrollablePane' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ScrollablePane' windows added. (006B4968)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Scrollbar' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Scrollbar' windows added. (006B4B28)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Slider' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Slider' windows added. (006B4D88)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Spinner' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Spinner' windows added. (006B4F48)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/TabButton' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/TabButton' windows added. (006B5108)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/TabControl' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/TabControl' windows added. (006B52C8)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Thumb' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Thumb' windows added. (006B5488)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Titlebar' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Titlebar' windows added. (006B5648)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ToggleButton' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ToggleButton' windows added. (006B5808)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Tooltip' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Tooltip' windows added. (006B5AB0)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/ItemListbox' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/ItemListbox' windows added. (006B5C70)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/GroupBox' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/GroupBox' windows added. (006B5E30)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'CEGUI/Tree' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'CEGUI/Tree' windows added. (006B5FF0)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'LayoutCell' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'LayoutCell' windows added. (006B61B0)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'HorizontalLayoutContainer' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'HorizontalLayoutContainer' windows added. (006B6370)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'VerticalLayoutContainer' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'VerticalLayoutContainer' windows added. (006B6600)
+30/03/2015 21:25:06 (Std) 	Created WindowFactory for 'GridLayoutContainer' windows.
+30/03/2015 21:25:06 (Std) 	WindowFactory for 'GridLayoutContainer' windows added. (006B67C0)
+30/03/2015 21:25:06 (Std) 	CEGUI::System singleton created. (006A8FE8)
+30/03/2015 21:25:06 (Std) 	---- CEGUI System initialisation completed ----
+30/03/2015 21:25:06 (Std) 	
+30/03/2015 21:25:09 (Error)	CEGUI::UnknownObjectException in function 'class CEGUI::Font &__thiscall CEGUI::NamedXMLResourceManager<class CEGUI::Font,class CEGUI::Font_xmlHandler>::get(const class CEGUI::String &) const' (c:\_-Stuff-_\CEGUI\cegui-0.8.4\cegui\include\CEGUI/NamedXMLResourceManager.h:346) : No object of type 'Font' named 'DejaVuSans-10' is present in the collection.
+30/03/2015 21:25:09 (Error)	========== Start of Backtrace ==========
+30/03/2015 21:25:10 (Error)	#0 CEGUI::Exception::Exception +0x326 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#1 CEGUI::UnknownObjectException::UnknownObjectException +0x79 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#2 CEGUI::NamedXMLResourceManager<CEGUI::Font,CEGUI::Font_xmlHandler>::get +0x1e0 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#3 CEGUI::PropertyHelper<CEGUI::Font *>::fromString +0x6f (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#4 CEGUI::TypedProperty<CEGUI::Font *>::set +0x18 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#5 CEGUI::PropertySet::setProperty +0x1f5 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#6 CEGUI::GUILayout_xmlHandler::elementPropertyStart +0x1da (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#7 CEGUI::GUILayout_xmlHandler::elementStart +0x10c (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#8 CEGUI::ExpatParser::startElement +0x155 (c:\_-Stuff-_\CEGUI\cegui-0.8.4\build\bin\CEGUIExpatParser_d.dll)
+30/03/2015 21:25:11 (Error)	#9 doContent +0x8ca (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#10 contentProcessor +0x52 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#11 doProlog +0x859 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#12 prologProcessor +0xa0 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#13 prologInitProcessor +0x47 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#14 XML_ParseBuffer +0xdc (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#15 XML_Parse +0x1ea (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\expat_d.dll)
+30/03/2015 21:25:11 (Error)	#16 CEGUI::ExpatParser::parseXML +0x1be (c:\_-Stuff-_\CEGUI\cegui-0.8.4\build\bin\CEGUIExpatParser_d.dll)
+30/03/2015 21:25:11 (Error)	#17 CEGUI::XMLParser::parseXMLFile +0xb1 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#18 CEGUI::WindowManager::loadLayoutFromFile +0x272 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\DLLS\CEGUIBase-0_d.dll)
+30/03/2015 21:25:11 (Error)	#19 Helios::UI::SetDevice +0x7f3 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#20 Helios::DX11Draw::InitGraphics +0x71 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#21 Helios::RenderTask::Pefrom +0xf1 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#22 Helios::Task::Run +0x61 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#23 std::_Pmf_wrap<void (__thiscall Helios::Task::*)(void),void,Helios::Task,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil>::operator()<Ref<Helios::Task> > +0x3c (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#24 std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall Helios::Task::*)(void),void,Helios::Task,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil>,std::reference_wrapper<Ref<Helios::Task> >,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil +0x5f (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#25 std::_LaunchPad<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall Helios::Task::*)(void),void,Helios::Task,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil>,std::reference_wrapper<Ref<Helios::Task> >,std::_Nil,std::_Nil,std::_Nil,std +0x50 (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#26 std::_LaunchPad<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall Helios::Task::*)(void),void,Helios::Task,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil,std::_Nil>,std::reference_wrapper<Ref<Helios::Task> >,std::_Nil,std::_Nil,std::_Nil,std +0x2c (C:\_-Stuff-_\project-Helios\Helios_source\HeliosBuild\Heliso_debug.exe)
+30/03/2015 21:25:11 (Error)	#27 public: void __thiscall std::_Pad::_Release(void) +0xd6 (C:\windows\system32\MSVCP110D.dll)
+30/03/2015 21:25:11 (Error)	#28 _beginthreadex +0x1a1 (C:\windows\system32\MSVCR110D.dll)
+30/03/2015 21:25:11 (Error)	#29 _endthreadex +0x171 (C:\windows\system32\MSVCR110D.dll)
+30/03/2015 21:25:11 (Error)	#30 BaseThreadInitThunk +0x12 (C:\windows\syswow64\kernel32.dll)
+30/03/2015 21:25:11 (Error)	#31 RtlInitializeExceptionChain +0x63 (C:\windows\SysWOW64\ntdll.dll)
+30/03/2015 21:25:11 (Error)	#32 RtlInitializeExceptionChain +0x36 (C:\windows\SysWOW64\ntdll.dll)
+30/03/2015 21:25:11 (Error)	==========  End of Backtrace  ==========
