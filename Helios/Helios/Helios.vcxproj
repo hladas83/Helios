@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61A85805-422D-4E15-ABD7-5465136D6665}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Helios</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>Libs\Assimp\lib\x86;$(DXSDK_DIR)Lib\x86;Libs\CEGUI\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\HeliosBuild\</OutDir>
+    <TargetName>Heliso_debug</TargetName>
+    <IntDir>Intermediate\$(Configuration)\</IntDir>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\HeliosBuild\</OutDir>
+    <TargetName>Helios_release</TargetName>
+    <IntDir>Intermediate\$(Configuration)\</IntDir>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>Libs\Assimp\lib\x86;$(DXSDK_DIR)Lib\x86;Libs\CEGUI\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;_XM_NO_INTRINSICS_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>DXUT\Core;DXUT\Optional;Libs\Boost;Libs;Libs\Assimp\include;Libs\Boost\stage\lib;Libs\CEGUI\include;Libs\CEGUI\include\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4005;4996</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11d.lib;d3dx9d.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;assimp.lib;CEGUIBase-0_d.lib;CEGUIDirect3D11Renderer-0_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;_XM_NO_INTRINSICS_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>DXUT\Core;DXUT\Optional;Libs\Boost;Libs;Libs\Assimp\include;Libs\Boost\stage\lib;Libs\CEGUI\include;Libs\CEGUI\include\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DisableSpecificWarnings>4005;4996</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11.lib;d3dx9.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;assimp.lib;CEGUIBase-0.lib;CEGUIDirect3D11Renderer-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Elementary\TaskManager\TaskManager.cpp" />
+    <ClCompile Include="Engine\DX11Draw\DrawTask.cpp" />
+    <ClCompile Include="Engine\DX11Draw\DX11Draw.cpp" />
+    <ClCompile Include="Engine\DX11Draw\RenderManager.cpp" />
+    <ClCompile Include="Engine\DX11Draw\RenderObject.cpp" />
+    <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="Engine\EngineCamera\ECamera.cpp" />
+    <ClCompile Include="Engine\FileServer\FileServer.cpp" />
+    <ClCompile Include="Engine\FileServer\ParamItem.cpp" />
+    <ClCompile Include="Engine\IGame.cpp" />
+    <ClCompile Include="Engine\Shaders\Shader.cpp" />
+    <ClCompile Include="Engine\Shaders\ShadersBank.cpp" />
+    <ClCompile Include="Engine\Shapes\Shape.cpp" />
+    <ClCompile Include="Engine\Shapes\ShapesBank.cpp" />
+    <ClCompile Include="Engine\Textures\Texture.cpp" />
+    <ClCompile Include="Engine\Textures\TexturesBank.cpp" />
+    <ClCompile Include="Engine\UI\UI.cpp" />
+    <ClCompile Include="Game\Camera\Camera.cpp" />
+    <ClCompile Include="Game\Entity.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Game\SpaceDivisions\Galaxy.cpp" />
+    <ClCompile Include="Game\SpaceDivisions\Space.cpp" />
+    <ClCompile Include="Game\SpaceDivisions\StarSystem.cpp" />
+    <ClCompile Include="Game\SpaceObjects\ObjectTypes\ObjectType.cpp" />
+    <ClCompile Include="Game\SpaceObjects\ObjectTypes\TypesBank.cpp" />
+    <ClCompile Include="Game\SpaceObjects\ObjectTypes\OrbiterType.cpp" />
+    <ClCompile Include="Game\SpaceObjects\ObjectTypes\StarType.cpp" />
+    <ClCompile Include="Game\SpaceObjects\Orbiter.cpp" />
+    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\OrbiterSimulation.cpp" />
+    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\PlainSimulation.cpp" />
+    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\StarSimulation.cpp" />
+    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\StarSystemSimulation.cpp" />
+    <ClCompile Include="Game\SpaceObjects\SpaceObjectBase.cpp" />
+    <ClCompile Include="Game\SpaceObjects\Star.cpp" />
+    <ClCompile Include="Helios.cpp" />
+    <ClCompile Include="Test\Test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Elementary\Assert.h" />
+    <ClInclude Include="Elementary\Color.h" />
+    <ClInclude Include="Elementary\dynCast.h" />
+    <ClInclude Include="Elementary\IItemsBank\ItemsBankBase.h" />
+    <ClInclude Include="Elementary\Matrix4.h" />
+    <ClInclude Include="Elementary\LogF.h" />
+    <ClInclude Include="Elementary\NoCopy.h" />
+    <ClInclude Include="Elementary\SoftLink.h" />
+    <ClInclude Include="Elementary\PerfLog.h" />
+    <ClInclude Include="Elementary\Pointer.h" />
+    <ClInclude Include="Elementary\Ref.h" />
+    <ClInclude Include="Elementary\Singleton.h" />
+    <ClInclude Include="Elementary\TaskManager\TaskManager.h" />
+    <ClInclude Include="Elementary\Types.h" />
+    <ClInclude Include="Engine\DX11Draw\DrawTask.h" />
+    <ClInclude Include="Engine\DX11Draw\DX11Draw.h" />
+    <ClInclude Include="Engine\DX11Draw\DX11DrawTypes.h" />
+    <ClInclude Include="Engine\DX11Draw\RenderManager.h" />
+    <ClInclude Include="Engine\DX11Draw\RenderObject.h" />
+    <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="Engine\EngineCamera\ECamera.h" />
+    <ClInclude Include="Engine\FileServer\FileServer.h" />
+    <ClInclude Include="Engine\FileServer\ParamItem.h" />
+    <ClInclude Include="Engine\IGame.h" />
+    <ClInclude Include="Engine\Shaders\Shader.h" />
+    <ClInclude Include="Engine\Shaders\ShadersBank.h" />
+    <ClInclude Include="Engine\Shapes\Shape.h" />
+    <ClInclude Include="Engine\Shapes\ShapesBank.h" />
+    <ClInclude Include="Engine\Textures\Texture.h" />
+    <ClInclude Include="Engine\Textures\TexturesBank.h" />
+    <ClInclude Include="Engine\UI\UI.h" />
+    <ClInclude Include="Game\Camera\Camera.h" />
+    <ClInclude Include="Game\Entity.h" />
+    <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Game\SpaceDivisions\Galaxy.h" />
+    <ClInclude Include="Game\SpaceDivisions\Space.h" />
+    <ClInclude Include="Game\SpaceDivisions\StarSystem.h" />
+    <ClInclude Include="Game\SpaceObjects\ObjectTypes\ObjectType.h" />
+    <ClInclude Include="Game\SpaceObjects\ObjectTypes\TypesBank.h" />
+    <ClInclude Include="Game\SpaceObjects\ObjectTypes\OrbiterType.h" />
+    <ClInclude Include="Game\SpaceObjects\ObjectTypes\StarType.h" />
+    <ClInclude Include="Game\SpaceObjects\Orbiter.h" />
+    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\OrbiterSimulation.h" />
+    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\PlainSimulation.h" />
+    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\StarSimulation.h" />
+    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\StarSystemSimulation.h" />
+    <ClInclude Include="Game\SpaceObjects\SpaceObjectBase.h" />
+    <ClInclude Include="Game\SpaceObjects\Star.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Test\Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Engine\Shapes\Effects\Planet.fx">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Engine\Shapes\Effects\Line.fx">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Game\CoreCfg\core.hcf">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/Configs/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/Configs/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+    <CustomBuild Include="Game\CoreCfg\space.hcf">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/Configs/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/Configs/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Game\CoreCfg\planets.hcf">
+      <FileType>Document</FileType>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/Configs/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/Configs/%(Filename)%(Extension)"
+</Command>
+    </CustomBuild>
+    <CustomBuild Include="Game\CoreCfg\stars.hcf">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/Configs/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/Configs/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Engine\Shapes\Effects\Star.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
+</Command>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Engine\Shapes\Effects\Atmosphere.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Game\CoreCfg\typesInfo.hcf">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/Configs/%(Filename)%(Extension)"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/Configs/%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Engine\Shapes\Effects\Icon.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
+</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

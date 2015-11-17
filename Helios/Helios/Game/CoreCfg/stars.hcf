@@ -1,0 +1,30 @@
+
+class defaultStar
+{
+	type = "star";
+	simulationType = "star";
+	infoType = "starInfoType";
+	size = 0.05;
+}
+
+class sun : defaultStar
+{
+	size = 0.05;
+	orbiters[] = {"mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "ceres", "haumea", "makemake", "eris", "Halley", "Borrelly", "Ikeya–Zhang"}; //list of planets included 
+	//orbiters[] = {"earth"}; //list of planets included 
+
+	class simulation
+	{
+		siderealRotationPeriod = 1; ///rotation around its axis of rotation 
+	}
+
+	class renderObjects
+	{
+		class star
+		{
+			texture = "GameData/Textures/Milkyway/SolarSystem/Sun/sunColor.jpg";
+			shape = "GameData/Models/sphere.3DS";
+			shader = "GameData/FX/Star.fx";
+		}
+	}
+}
