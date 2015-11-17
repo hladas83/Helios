@@ -131,7 +131,7 @@ namespace Helios
       return 0;
     }
 
-    UI::GetInstance()->SetDevice(GetDevice(), GetDeviceContext());
+ //   UI::GetInstance()->SetDevice(GetDevice(), GetDeviceContext());
 
     return 1;
   }
@@ -497,7 +497,7 @@ namespace Helios
     _rendermanager.RenderAll();
 
     //render UI
-    CEGUI::System::getSingleton().renderAllGUIContexts();
+    //CEGUI::System::getSingleton().renderAllGUIContexts();
 
     _g_pSwapChain->Present( 0, 0 );
   }
