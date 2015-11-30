@@ -17,7 +17,7 @@ namespace Helios
   //===================================================================================================
   // ShapesBank class
 
-  class ShapesBank   : public  Singleton<ShapesBank>, public ItemsBankBaseDX11<Shape>
+  class ShapesBank : public ItemsBankBaseDX11<Shape, ShapesBank>
   {
     typedef ItemsBankBaseDX11 base;
 
@@ -26,8 +26,6 @@ namespace Helios
     virtual ~ShapesBank();
 
     virtual void Init() override;
-    virtual void CleanupDX11Device();
-
     //! load new item, if not already present
     virtual bool LoadItem(const char* itemPath) override;
   };

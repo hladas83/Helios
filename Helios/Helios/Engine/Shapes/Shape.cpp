@@ -34,6 +34,9 @@ namespace Helios
   {
     _g_pVertexBuffer = nullptr;
     _g_pIndexBuffer = nullptr;
+
+    RELEASE_MEM(_g_pVertexBuffer);
+    RELEASE_MEM(_g_pIndexBuffer);
   }
 
   //===================================================================================================
@@ -42,14 +45,6 @@ namespace Helios
   bool Shape::InitDX11(ID3D11Device* _g_pd3dDevice)
   {
     return true;
-  }
-
-  //------------------------------------------------------------------------------ 
-
-  void Shape::CleanupDX11Device()
-  {
-    RELEASE_MEM( _g_pVertexBuffer );
-    RELEASE_MEM( _g_pIndexBuffer );
   }
 
   //------------------------------------------------------------------------------ 

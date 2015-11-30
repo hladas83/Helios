@@ -49,14 +49,8 @@
     <Filter Include="Source Files\Engine\Shaders">
       <UniqueIdentifier>{350dc92f-d684-4701-a30e-2b07a9bbd72f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Engine\Shapes\Effects">
-      <UniqueIdentifier>{7813787b-adb5-4c4e-a7a4-4888a4abb051}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shaders">
       <UniqueIdentifier>{35436735-c25b-47f9-989c-c4563e91b799}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Game\SpaceObjects\SimulationMovementTypes">
-      <UniqueIdentifier>{8465c57d-b7e0-4e78-8572-54f38bc4b9a0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Elementary\Math">
       <UniqueIdentifier>{84eaf45c-9569-4403-ae53-ecca1bc914f2}</UniqueIdentifier>
@@ -84,6 +78,21 @@
     </Filter>
     <Filter Include="Source Files\Elementary\ItemsBankBase">
       <UniqueIdentifier>{409ca2d2-dbc3-4f06-88d9-5e4c7512ac6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\SpaceObjects\Components">
+      <UniqueIdentifier>{3be93acc-34bd-4cc5-95c3-30eaec3fcaea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\SpaceObjects\Components\UIHelperComponents">
+      <UniqueIdentifier>{473cb758-3607-47b7-9e92-7c456e5cfcbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\SpaceObjects\Components\MovementComponents">
+      <UniqueIdentifier>{8465c57d-b7e0-4e78-8572-54f38bc4b9a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Shaders\Effects">
+      <UniqueIdentifier>{7813787b-adb5-4c4e-a7a4-4888a4abb051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Components">
+      <UniqueIdentifier>{f81ebb4b-b1b6-4f54-902f-2de339f2eb45}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -119,12 +128,6 @@
     </ClCompile>
     <ClCompile Include="Helios.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\OrbiterSimulation.cpp">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\StarSimulation.cpp">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
     </ClCompile>
     <ClCompile Include="Game\SpaceObjects\ObjectTypes\OrbiterType.cpp">
       <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
@@ -162,9 +165,6 @@
     <ClCompile Include="Elementary\TaskManager\TaskManager.cpp">
       <Filter>Source Files\Elementary\TaskManager</Filter>
     </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\StarSystemSimulation.cpp">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\DX11Draw\RenderManager.cpp">
       <Filter>Source Files\Engine\Draw</Filter>
     </ClCompile>
@@ -186,14 +186,38 @@
     <ClCompile Include="Game\Entity.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\SimulationMovementTypes\PlainSimulation.cpp">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
-    </ClCompile>
     <ClCompile Include="Game\SpaceObjects\SpaceObjectBase.cpp">
       <Filter>Source Files\Game\SpaceObjects</Filter>
     </ClCompile>
     <ClCompile Include="Game\SpaceObjects\ObjectTypes\ObjectType.cpp">
       <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\OrbiterSimulation.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\PlainSimulation.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\StarSimulation.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\StarSystemSimulation.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\UIBasicInfo.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\UIHelperComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\ComponentHolder.cpp">
+      <Filter>Source Files\Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\Component.cpp">
+      <Filter>Source Files\Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\ComponentType.cpp">
+      <Filter>Source Files\Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\ComponentManager.cpp">
+      <Filter>Source Files\Engine\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -203,17 +227,11 @@
     <ClInclude Include="Elementary\Types.h">
       <Filter>Source Files\Elementary</Filter>
     </ClInclude>
-    <ClInclude Include="Elementary\Pointer.h">
-      <Filter>Source Files\Elementary\SmartPointers</Filter>
-    </ClInclude>
     <ClInclude Include="Elementary\dynCast.h">
       <Filter>Source Files\Elementary</Filter>
     </ClInclude>
     <ClInclude Include="Elementary\PerfLog.h">
       <Filter>Source Files\Elementary\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementary\Ref.h">
-      <Filter>Source Files\Elementary\SmartPointers</Filter>
     </ClInclude>
     <ClInclude Include="Elementary\LogF.h">
       <Filter>Source Files\Elementary\Common</Filter>
@@ -257,12 +275,6 @@
     <ClInclude Include="Common.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\OrbiterSimulation.h">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\StarSimulation.h">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
-    </ClInclude>
     <ClInclude Include="Elementary\Matrix4.h">
       <Filter>Source Files\Elementary\Math</Filter>
     </ClInclude>
@@ -290,9 +302,6 @@
     <ClInclude Include="Engine\FileServer\ParamItem.h">
       <Filter>Source Files\Engine\FileServer</Filter>
     </ClInclude>
-    <ClInclude Include="Elementary\SoftLink.h">
-      <Filter>Source Files\Elementary\SmartPointers</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\DX11Draw\RenderObject.h">
       <Filter>Source Files\Engine\Draw</Filter>
     </ClInclude>
@@ -307,9 +316,6 @@
     </ClInclude>
     <ClInclude Include="Elementary\TaskManager\TaskManager.h">
       <Filter>Source Files\Elementary\TaskManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\StarSystemSimulation.h">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
     </ClInclude>
     <ClInclude Include="Engine\DX11Draw\RenderManager.h">
       <Filter>Source Files\Engine\Draw</Filter>
@@ -341,14 +347,50 @@
     <ClInclude Include="Elementary\IItemsBank\ItemsBankBase.h">
       <Filter>Source Files\Elementary\ItemsBankBase</Filter>
     </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\SimulationMovementTypes\PlainSimulation.h">
-      <Filter>Source Files\Game\SpaceObjects\SimulationMovementTypes</Filter>
-    </ClInclude>
     <ClInclude Include="Game\SpaceObjects\SpaceObjectBase.h">
       <Filter>Source Files\Game\SpaceObjects</Filter>
     </ClInclude>
     <ClInclude Include="Game\SpaceObjects\ObjectTypes\ObjectType.h">
       <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementary\SmartPointers\InitPtr.h">
+      <Filter>Source Files\Elementary\SmartPointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementary\SmartPointers\Ref.h">
+      <Filter>Source Files\Elementary\SmartPointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementary\SmartPointers\SoftLink.h">
+      <Filter>Source Files\Elementary\SmartPointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementary\SmartPointers\SRef.h">
+      <Filter>Source Files\Elementary\SmartPointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\OrbiterSimulation.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\PlainSimulation.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\StarSimulation.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\StarSystemSimulation.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\UIBasicInfo.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\UIHelperComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\ComponentHolder.h">
+      <Filter>Source Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\Component.h">
+      <Filter>Source Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\ComponentType.h">
+      <Filter>Source Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\ComponentManager.h">
+      <Filter>Source Files\Engine\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -382,5 +424,10 @@
     <CustomBuild Include="Engine\Shapes\Effects\Icon.fx">
       <Filter>Shaders</Filter>
     </CustomBuild>
+    <CustomBuild Include="Engine\Shaders\Effects\Atmosphere.fx" />
+    <CustomBuild Include="Engine\Shaders\Effects\Icon.fx" />
+    <CustomBuild Include="Engine\Shaders\Effects\Line.fx" />
+    <CustomBuild Include="Engine\Shaders\Effects\Planet.fx" />
+    <CustomBuild Include="Engine\Shaders\Effects\Star.fx" />
   </ItemGroup>
 </Project>

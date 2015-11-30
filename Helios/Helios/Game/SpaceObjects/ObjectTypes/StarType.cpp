@@ -1,6 +1,6 @@
 #include "StarType.h"
 #include "../Star.h"
-#include "../SimulationMovementTypes/StarSimulation.h"
+#include "SpaceObjects/Components/MovementComponents/StarSimulation.h"
 
 namespace Helios
 {

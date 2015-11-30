@@ -1,6 +1,7 @@
 #include "Star.h"
 #include "../SpaceObjects/ObjectTypes/StarType.h"
-#include "../SpaceObjects/SimulationMovementTypes/OrbiterSimulation.h"
+#include "SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
+#include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
 #include "../SpaceObjects/ObjectTypes/TypesBank.h"
 #include "../../Engine/Shapes/Shape.h"
 #include "../../Engine/Engine.h"

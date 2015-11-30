@@ -14,16 +14,10 @@ namespace Helios
 {
 
   //===================================================================================================
-  // ShadersBank class
-  class TexturesBank : public Singleton<TexturesBank>,  public ItemsBankBaseDX11<Texture>
+  // Texture bank type
+
+  class TexturesBank : public ItemsBankBaseDX11<Texture, TexturesBank>
   {
-    typedef ItemsBankBaseDX11 base;
-
-  public:
-    TexturesBank();
-    virtual ~TexturesBank();
-
-    virtual void Init() override;
   };
 
 } // Helios namespace

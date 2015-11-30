@@ -15,14 +15,11 @@ namespace Helios
 {
   //===================================================================================================
   // ShadersBank class
-  class ShadersBank  : public Singleton<ShadersBank>,  public ItemsBankBaseDX11<Shader>
+  class ShadersBank : public ItemsBankBaseDX11<Shader, ShadersBank>
   {
     typedef ItemsBankBaseDX11 base;
 
   public:
-
-    ShadersBank(){};
-    virtual ~ShadersBank(){};
 
     virtual void Init() override;
   };

@@ -17,6 +17,7 @@ namespace Helios
 
   class ObjectType;
   class OrbiterType;
+  class UIBasicInfo;
 
   //===================================================================================================
   //orbiter object
@@ -26,9 +27,8 @@ namespace Helios
     typedef Entity base;
 
   protected:
-    //! object shape/shader/texture description
-    Ref<RenderObject> _iconRenderObject;
-    HColor _infoColor;
+    //! object UI description
+    Ref<UIBasicInfo> _UIBasicInfo;
 
   private:
     // initialize this class (not virtual, so it can be called from constructor)

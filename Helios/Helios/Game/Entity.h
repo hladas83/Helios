@@ -7,8 +7,9 @@
 // included dependencies
 
 #include "../../Elementary/Types.h"
-#include "SpaceObjects/SimulationMovementTypes/PlainSimulation.h"
+#include "SpaceObjects/Components/MovementComponents/PlainSimulation.h"
 #include "SpaceObjects/ObjectTypes/ObjectType.h"
+#include "../Engine/Components/ComponentHolder.h"
 
 #include <string>
 #include <math.h>
@@ -28,10 +29,11 @@ namespace Helios
   //===================================================================================================
   //basic object
 
-  class Entity : public RefCount, public OLinkBase<Entity>
+  class Entity : public Component, public ComponentHolder, public OLinkBase<Entity>
   {
-  protected:
+    typedef Component base;
 
+  protected:
     //! object template
     Ref<ObjectType> _type;
     //! hiearchy parent (to whom entity belongs)
@@ -92,16 +94,15 @@ namespace Helios
     //set object scale
     __forceinline float GetSize() {return _size;};
     __forceinline void SetSize(float size) {_size = size;};
-
-    //!Simulate loop
-    virtual void Simulate(float deltaT) = 0;
-    virtual void PostSimulate();
-    //! Draw thread method
-    virtual void Draw() = 0;
-    virtual void PostDraw();
   
+    //!Simulate loop
+    virtual void Simulate(float deltaT) override;
+    virtual void PostSimulate() override;
+    //! Draw thread method
+    virtual void Draw() override;
+    virtual void PostDraw() override;
 
-    USE_CASTING_ROOT;
+    USE_CASTING(base);
   };
 
 } //namespace

@@ -72,15 +72,13 @@ namespace Helios
   //delete all types
   void Engine::CleanUp()
   {
-    GShapes()->CleanupDX11Device();
-
     FileServer::Release();
     DX11Draw::Release();
     ShapesBank::Release();
     ShadersBank::Release();
     TexturesBank::Release();
 
-    CEGUI::Direct3D11Renderer::destroySystem(); 
+   // CEGUI::Direct3D11Renderer::destroySystem(); 
   };
 
 } // Helios namespace

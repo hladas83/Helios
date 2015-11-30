@@ -25,13 +25,9 @@ namespace Helios
   class RenderObject : public RefCount, public OLinkBase<RenderObject>
   {
   private:
-    //!geometry to draw
-    Ref<Shape> _shape;
-    //!Texture
-    std::vector<Ref<Texture>> _textures;
-    ////!Shaders
+    Ref<Shape>  _shape;
     Ref<Shader> _shader;
-    //
+    std::vector<Ref<Texture>> _textures;
     Matrix4 _transform;   
 
   //------------------------------------------------------------------------------ 

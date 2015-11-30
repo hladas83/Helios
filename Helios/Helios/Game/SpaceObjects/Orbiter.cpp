@@ -1,7 +1,8 @@
 #include "Orbiter.h"
 #include "../SpaceObjects/ObjectTypes/OrbiterType.h"
 #include "../SpaceObjects/ObjectTypes/TypesBank.h"
-#include "../SpaceObjects/SimulationMovementTypes/OrbiterSimulation.h"
+#include "SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
+#include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/DX11Draw/RenderObject.h"
 #include "../Game.h"
@@ -156,7 +157,7 @@ namespace Helios
       DrawContext context = DrawContext(renderOrbitObject, translateToPositionParent);
       context.SetScale(orbiretSim->GetEllipseA(), 1, orbiretSim->GetEllipseB());
       context.SetAnimationPeriod(GetRenderVisualState()->_animationPeriod );
-      context.SetColor(_infoColor);
+      context.SetColor(_UIBasicInfo->GetInfoColor());
 
       if(renderOrbitObject) GEngine->GDraw()->RenderObject(context);
     }

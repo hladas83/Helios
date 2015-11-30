@@ -41,11 +41,4 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  void ShapesBank::CleanupDX11Device()
-  {
-    ForEachItem([](Shape *shape) ->bool {shape->CleanupDX11Device(); return false; });
-  }
-
-  //------------------------------------------------------------------------------
-
 } // Helios namespace

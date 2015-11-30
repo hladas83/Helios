@@ -56,7 +56,6 @@ namespace Helios
 
     virtual bool InitDX11(ID3D11Device* _g_pd3dDevice);
     virtual void Draw(DrawContext &drawContext);
-    virtual void CleanupDX11Device();
 
     USE_CASTING_ROOT;
   };

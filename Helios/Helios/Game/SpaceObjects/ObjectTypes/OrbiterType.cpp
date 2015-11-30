@@ -1,6 +1,6 @@
 #include "OrbiterType.h"
 #include "../Orbiter.h"
-#include "../SimulationMovementTypes/OrbiterSimulation.h"
+#include "SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
 
 #include "../../Engine/Engine.h"
 

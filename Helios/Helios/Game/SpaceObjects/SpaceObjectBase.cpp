@@ -1,9 +1,10 @@
 #include "SpaceObjectBase.h"
 #include "../SpaceObjects/ObjectTypes/OrbiterType.h"
 #include "../SpaceObjects/ObjectTypes/TypesBank.h"
-#include "../SpaceObjects/SimulationMovementTypes/OrbiterSimulation.h"
+#include "SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
 #include "../../Engine/Engine.h"
 #include "../Game.h"
+#include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
 
 namespace Helios
 {
@@ -30,18 +31,23 @@ namespace Helios
 
     Matrix4 transform;
     transform.SetIdentityMatrix();
-    _iconRenderObject = new RenderObject("quad", textures, "GameData/FX/Icon.fx", transform, RenderObject::RPIcons, RenderObject::RTLine);
+    RenderObject *iconRenderObject = new RenderObject("quad", textures, "GameData/FX/Icon.fx", transform, RenderObject::RPIcons, RenderObject::RTLine);
+
+    _UIBasicInfo = new UIBasicInfo();
 
     //load orbiters
     const WParamItem itemColor = infoTypeCfg >> "color";
     if(itemColor.IsArray() && itemColor.ArraySize() == 4)
     {
-      _infoColor.SetColor(
+      _UIBasicInfo->SetInfoColor(HColor(
         itemColor.ReadArrayValue(0).GetValue<float>(),
         itemColor.ReadArrayValue(1).GetValue<float>(),
         itemColor.ReadArrayValue(2).GetValue<float>(),
-        itemColor.ReadArrayValue(3).GetValue<float>());
+        itemColor.ReadArrayValue(3).GetValue<float>()));
     }
+
+    _renderObjects.push_back(iconRenderObject);
+
   }
 
   //------------------------------------------------------------------------------  
@@ -64,6 +70,7 @@ namespace Helios
   {
     CheckNull(GetMovementSimulation());
     GetMovementSimulation()->Simulate(this, deltaT);
+    base::Simulate(deltaT);
   }
 
   //------------------------------------------------------------------------------
@@ -77,12 +84,13 @@ namespace Helios
 
   void SpaceObjectBase::Draw()
   {
-    //render info type icon
-    DrawContext context = DrawContext(_iconRenderObject, GetRenderVisualState()->_frame);
-    context.SetScale(0.02f / GEngine->GDraw()->GetAspectRatio(), 0.02f, 1.0f);
-    context.SetColor(_infoColor);
+    ////render info type icon
+    //DrawContext context = DrawContext(_iconRenderObject, GetRenderVisualState()->_frame);
+    //context.SetScale(0.02f / GEngine->GDraw()->GetAspectRatio(), 0.02f, 1.0f);
+    //context.SetColor(_iconRenderObject->GetInfoColor());
 
-    GEngine->GDraw()->RenderObject(context);
+    //GEngine->GDraw()->RenderObject(context);
+    base::Draw();
   }
 
   //------------------------------------------------------------------------------
@@ -90,7 +98,5 @@ namespace Helios
   void SpaceObjectBase::PostDraw()
   {
     base::PostDraw();
-  }
-
-  
+  } 
 } //namespace Helios

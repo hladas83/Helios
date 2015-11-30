@@ -22,7 +22,7 @@ namespace Helios
   // game class
 
 
-  class TypesBank : public Singleton<TypesBank>,  public ItemsBankBase<ObjectType>
+  class TypesBank : public ItemsBankBase<ObjectType, TypesBank>
   {
     typedef ItemsBankBase base;
 

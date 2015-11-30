@@ -28,8 +28,6 @@ namespace Helios
   private:
     //! orbiters that belongs to orbiter (moons, stations,....)
     std::list<Ref<Entity>> _orbiters;
-    bool _atmosphere;
-
 
   private:
     // initialize this class (not virtual, so it can be called from constructor)

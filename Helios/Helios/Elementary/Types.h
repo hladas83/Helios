@@ -3,9 +3,11 @@
 #ifndef _TYPES
 #define _TYPES
 
-#include "Pointer.h"
-#include "Ref.h"
-#include "SoftLink.h"
+#include <iostream>
+#include "SmartPointers/Ref.h"
+#include "SmartPointers/SoftLink.h"
+#include "SmartPointers/InitPtr.h"
+#include "SmartPointers/SRef.h"
 #include "dynCast.h"
 #include "Matrix4.h"
 #include "Singleton.h"

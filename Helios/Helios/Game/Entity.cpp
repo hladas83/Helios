@@ -62,9 +62,24 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
+  void Entity::Simulate(float deltaT)
+  {
+    ForEachComponent([deltaT](Ref<Component> component) {  component->Simulate(deltaT); });
+  }
+
+  //------------------------------------------------------------------------------  
+
   void Entity::PostSimulate()
   {
     if(_movementSimulation) _movementSimulation->PostSimulate();
+    ForEachComponent([](Ref<Component> component) {  component->PostSimulate(); });
+  }
+
+  //------------------------------------------------------------------------------  
+
+  void Entity::Draw()
+  {
+    ForEachComponent([](Ref<Component> component) {  component->Draw(); });
   }
 
   //------------------------------------------------------------------------------  
@@ -72,6 +87,7 @@ namespace Helios
   void Entity::PostDraw()
   {
     if(_movementSimulation) _movementSimulation->PostDraw();
+    ForEachComponent([](Ref<Component> component) {  component->PostDraw(); });
   }
 
   //------------------------------------------------------------------------------  

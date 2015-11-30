@@ -14,8 +14,8 @@ namespace Helios
   //===================================================================================================
   // general items bank class
  
-  template<class Type>
-  class ItemsBankBase : public RefCount
+  template<class Type, class BankType>
+  class ItemsBankBase : public RefCount, public Singleton<BankType>
   {
 
   protected:
@@ -25,15 +25,8 @@ namespace Helios
     virtual ~ItemsBankBase(){};
 
   public:
-    virtual void Init() = 0;
+    virtual void Init() {};
     virtual void CleanUp() {_itemsBank.clear();};
-
-    //------------------------------------------------------------------------------  
-    //! call InitDX11 for each item
-    void InitDX11(ID3D11Device* _g_pd3dDevice) 
-    {
-      ForEachItem([_g_pd3dDevice](Type *item) ->bool {item->InitDX11(_g_pd3dDevice); return false; });
-    }
 
     //------------------------------------------------------------------------------  
     //! load new item, if not already present
@@ -101,8 +94,8 @@ namespace Helios
   //===================================================================================================
   // items bank class expanded with InitDX11
 
-  template<class Type>
-  class ItemsBankBaseDX11 : public ItemsBankBase<Type>
+  template<class Type, class BankType>
+  class ItemsBankBaseDX11 : public ItemsBankBase<Type, BankType>
   {
 
   public:
