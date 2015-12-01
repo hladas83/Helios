@@ -130,6 +130,7 @@
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\PlainSimulation.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\StarSimulation.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\StarSystemSimulation.cpp" />
+    <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\EntityIconComponent.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\UIBasicInfo.cpp" />
     <ClCompile Include="Game\SpaceObjects\ObjectTypes\ObjectType.cpp" />
     <ClCompile Include="Game\SpaceObjects\ObjectTypes\TypesBank.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\PlainSimulation.h" />
     <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\StarSimulation.h" />
     <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\StarSystemSimulation.h" />
+    <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\EntityIconComponent.h" />
     <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\UIBasicInfo.h" />
     <ClInclude Include="Game\SpaceObjects\ObjectTypes\ObjectType.h" />
     <ClInclude Include="Game\SpaceObjects\ObjectTypes\TypesBank.h" />

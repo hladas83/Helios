@@ -95,10 +95,10 @@ namespace Helios
     __forceinline float GetSize() {return _size;};
     __forceinline void SetSize(float size) {_size = size;};
   
-    //!Simulate loop
+    //! component Simulate loop
     virtual void Simulate(float deltaT) override;
     virtual void PostSimulate() override;
-    //! Draw thread method
+    //! component Draw thread method
     virtual void Draw() override;
     virtual void PostDraw() override;
 

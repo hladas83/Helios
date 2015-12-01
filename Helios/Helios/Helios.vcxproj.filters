@@ -219,6 +219,9 @@
     <ClCompile Include="Engine\Components\ComponentManager.cpp">
       <Filter>Source Files\Engine\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\EntityIconComponent.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\UIHelperComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -391,6 +394,9 @@
     </ClInclude>
     <ClInclude Include="Engine\Components\ComponentManager.h">
       <Filter>Source Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\EntityIconComponent.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\UIHelperComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@
 #include "../../Engine/Engine.h"
 #include "../Game.h"
 #include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
+#include "SpaceObjects/Components/UIHelperComponents/EntityIconComponent.h"
 
 namespace Helios
 {
@@ -29,9 +30,9 @@ namespace Helios
     std::vector<HString> textures;
     textures.push_back(infoTypeCfg.ReadValue(HString("icon") ,HString("GameData/Textures/icons/planet.jpg")));
 
-    Matrix4 transform;
-    transform.SetIdentityMatrix();
-    RenderObject *iconRenderObject = new RenderObject("quad", textures, "GameData/FX/Icon.fx", transform, RenderObject::RPIcons, RenderObject::RTLine);
+    
+    EntityIconComponent *entityIconComponent = new EntityIconComponent(this, _entityConfig);
+    _componentList.push_back(entityIconComponent);
 
     _UIBasicInfo = new UIBasicInfo();
 
@@ -45,9 +46,6 @@ namespace Helios
         itemColor.ReadArrayValue(2).GetValue<float>(),
         itemColor.ReadArrayValue(3).GetValue<float>()));
     }
-
-    _renderObjects.push_back(iconRenderObject);
-
   }
 
   //------------------------------------------------------------------------------  

@@ -79,7 +79,6 @@ namespace Helios
               orbiretSim->SetGravityParent(this);
             }
 
-
             if( strcmpi(orbiter->GetName().data(), "earth") == 0)
             {
               GGame->GetCamera()->SetTarget(orbiter);
