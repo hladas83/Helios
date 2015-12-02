@@ -25,10 +25,6 @@ namespace Helios
   {
     typedef ObjectType base;
 
-  private:
-
-    //! object shape description
-    Ref<RenderObject> _renderOrbitObject;
 
   private:
     // initialize this class (not virtual, so it can be called from constructor)
@@ -38,10 +34,6 @@ namespace Helios
     OrbiterType(HString name);
     virtual ~OrbiterType();
     virtual void ReInit() override;
-
-    //------------------------------------------------------------------------------
-    //! get object shape description
-    inline Ref<RenderObject> GetRenderOrbitObject() const {return _renderOrbitObject;};
 
     //------------------------------------------------------------------------------
     //! create entity of this type

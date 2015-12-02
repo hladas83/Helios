@@ -1,6 +1,7 @@
 #include "EntityOrbitComponent.h"
 #include "../Engine/Engine.h"
 #include "../Game/entity.h"
+#include "../Game/SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
 
 namespace Helios
 {
@@ -11,15 +12,10 @@ namespace Helios
   {
     _parent = parent;
 
-    HString infoType = entityConfig.ReadValue(HString("infoType"), HString("planetInfoType"));
-    WParamItem infoTypeCfg = GCoreConfig >> infoType;
-
     std::vector<HString> textures;
-    textures.push_back(infoTypeCfg.ReadValue(HString("icon"), HString("GameData/Textures/icons/planet.jpg")));
-
     Matrix4 transform;
     transform.SetIdentityMatrix();
-    _iconRenderObject = new RenderObject("quad", textures, "GameData/FX/Icon.fx", transform, RenderObject::RPIcons, RenderObject::RTLine);
+    _renderOrbitObject = new RenderObject("circle", textures, "GameData/FX/Line.fx", transform, RenderObject::RPLine, RenderObject::RTLine);
   }
 
   //------------------------------------------------------------------------------  
@@ -34,11 +30,35 @@ namespace Helios
   void EntityOrbitComponent::Draw()
   {
     Entity *entity = dyn_cast<Entity>(_parent.GetObj());
-    if (entity && _iconRenderObject)
+    if (entity && _renderOrbitObject)
     {
-      DrawContext context = DrawContext(_iconRenderObject, entity->GetRenderVisualState()->_frame);
-      context.SetScale(0.02f / GEngine->GDraw()->GetAspectRatio(), 0.02f, 1.0f);
-      GEngine->GDraw()->RenderObject(DrawContext(context));
+      const OrbiterSimulation *orbiretSim = dyn_cast<OrbiterSimulation> (entity->GetMovementSimulation());
+      const Entity *gravityParent = orbiretSim ? orbiretSim->GetGravityParent() : nullptr;
+
+      //render orbit trajectory
+      if (orbiretSim && gravityParent)
+      {
+        Matrix4 translateToPositionParent;
+        translateToPositionParent.SetIdentityMatrix();
+        translateToPositionParent.SetPosition(gravityParent->GetPosition<RenderState>());
+
+        Matrix4 translateToFocus;
+        translateToFocus.SetIdentityMatrix();
+        translateToFocus.SetPosition(orbiretSim->GetExcentricity(), 0, 0);
+
+        Matrix4 inclinationRotation;
+        inclinationRotation.SetRotationZ(orbiretSim->GetInclination());
+        translateToPositionParent = translateToFocus * inclinationRotation * translateToPositionParent;
+
+
+        DrawContext context = DrawContext(_renderOrbitObject, translateToPositionParent);
+        context.SetScale(orbiretSim->GetEllipseA(), 1, orbiretSim->GetEllipseB());
+        context.SetAnimationPeriod(entity->GetRenderVisualState()->_animationPeriod);
+      //  context.SetColor(_UIBasicInfo->GetInfoColor());
+
+        GEngine->GDraw()->RenderObject(context);
+      }
+
     }
   }
 

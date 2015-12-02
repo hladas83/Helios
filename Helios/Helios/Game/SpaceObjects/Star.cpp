@@ -75,7 +75,7 @@ namespace Helios
             _orbiters.push_front(orbiter);
             if(orbiter->GetMovementSimulation())
             {
-              OrbiterSimulation *orbiretSim = dyn_cast<OrbiterSimulation> (orbiter->GetMovementSimulation().GetRef());
+              OrbiterSimulation *orbiretSim = dyn_cast<OrbiterSimulation> (orbiter->GetMovementSimulation());
               orbiretSim->SetGravityParent(this);
             }
 

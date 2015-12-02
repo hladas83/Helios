@@ -26,10 +26,7 @@ namespace Helios
 
   void OrbiterType::InitClass()
   {
-    std::vector<HString> textures;
-    Matrix4 transform;
-    transform.SetIdentityMatrix();
-    _renderOrbitObject = new RenderObject("circle",textures,"GameData/FX/Line.fx", transform, RenderObject::RPLine, RenderObject::RTLine);
+
   }
 
   //------------------------------------------------------------------------------  

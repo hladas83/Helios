@@ -3,6 +3,7 @@
 #include "../SpaceObjects/ObjectTypes/TypesBank.h"
 #include "SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
 #include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
+#include "SpaceObjects/Components/UIHelperComponents/EntityOrbitComponent.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/DX11Draw/RenderObject.h"
 #include "../Game.h"
@@ -58,6 +59,10 @@ namespace Helios
       });
     }
 
+    EntityOrbitComponent *entityOrbiterComponent = new EntityOrbitComponent(this, _entityConfig);
+    _componentList.push_back(entityOrbiterComponent);
+
+
 
     //create all orbiters
     if(_entityConfig.IsClass())
@@ -78,7 +83,7 @@ namespace Helios
             _orbiters.push_front(orbiter);
             if(orbiter->GetMovementSimulation())
             {
-              OrbiterSimulation *orbiretSim = dyn_cast<OrbiterSimulation> (orbiter->GetMovementSimulation().GetRef());
+              OrbiterSimulation *orbiretSim = dyn_cast<OrbiterSimulation> (orbiter->GetMovementSimulation());
               orbiretSim->SetGravityParent(this);
             }
           }
@@ -134,33 +139,6 @@ namespace Helios
       GEngine->GDraw()->RenderObject(DrawContext(context));
     }
 
-    const OrbiterSimulation *orbiretSim = dyn_cast<OrbiterSimulation> (_movementSimulation.GetRef());
-    const Entity *gravityParent =  orbiretSim ? orbiretSim->GetGravityParent() : nullptr;
-
-    //render orbit trajectory
-    if(orbiretSim && gravityParent)
-    {
-      Matrix4 translateToPositionParent;
-      translateToPositionParent.SetIdentityMatrix();
-      translateToPositionParent.SetPosition(gravityParent->GetPosition<RenderState>());
-      
-      Matrix4 translateToFocus;
-      translateToFocus.SetIdentityMatrix();
-      translateToFocus.SetPosition(orbiretSim->GetExcentricity(), 0, 0);
-
-      Matrix4 inclinationRotation;
-      inclinationRotation.SetRotationZ(orbiretSim->GetInclination());
-      translateToPositionParent = translateToFocus * inclinationRotation * translateToPositionParent;
-
-      Ref<RenderObject> renderOrbitObject = Type()->GetRenderOrbitObject();
-
-      DrawContext context = DrawContext(renderOrbitObject, translateToPositionParent);
-      context.SetScale(orbiretSim->GetEllipseA(), 1, orbiretSim->GetEllipseB());
-      context.SetAnimationPeriod(GetRenderVisualState()->_animationPeriod );
-      context.SetColor(_UIBasicInfo->GetInfoColor());
-
-      if(renderOrbitObject) GEngine->GDraw()->RenderObject(context);
-    }
 
     ForEachOrbiter([](Ref<Entity> entity) {  entity->Draw(); });
   }

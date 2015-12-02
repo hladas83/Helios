@@ -71,7 +71,7 @@ namespace Helios
     const Entity *GetParent() const {return _parent.GetObj();}
 
     //! object movement simulation class
-    Ref<PlainSimulation> GetMovementSimulation() const;
+    PlainSimulation *GetMovementSimulation() const;
     ObejctState *GetSimulationState() ;
     ObejctState *GetRenderVisualState();
 

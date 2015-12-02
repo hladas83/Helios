@@ -93,7 +93,7 @@ namespace Helios
   //------------------------------------------------------------------------------  
 
   //! object movement simulation class
-  Ref<PlainSimulation> Entity::GetMovementSimulation() const
+  PlainSimulation *Entity::GetMovementSimulation() const
   {
     return _movementSimulation;
   }

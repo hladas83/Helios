@@ -16,7 +16,7 @@ namespace Helios
   class EntityOrbitComponent : public Component
   {
   private:
-    Ref<RenderObject> _iconRenderObject;
+    Ref<RenderObject> _renderOrbitObject;
 
   public:
     EntityOrbitComponent(Component *parent, WParamItem &entityConfig);
