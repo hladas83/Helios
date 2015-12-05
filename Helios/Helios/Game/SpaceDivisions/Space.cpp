@@ -58,7 +58,7 @@ namespace Helios
           const WParamItem itemgalaxiesArray = itemgalaxies.ReadArrayValue(i);
           if(!itemgalaxiesArray.IsString()) continue;
           //create new galaxy
-          Ref<Galaxy> galaxy(new Galaxy(nullptr, nullptr,itemgalaxiesArray.GetValue(HString(""))));
+          Ref<Galaxy> galaxy(new Galaxy(nullptr, itemgalaxiesArray.GetValue(HString(""))));
           //and make it active
           _galaxies.push_front(galaxy);
           if(_galaxies.size() == 1) SetActiveGalaxy(galaxy);

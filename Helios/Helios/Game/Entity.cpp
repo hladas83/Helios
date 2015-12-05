@@ -2,7 +2,6 @@
 #include "../common.h"
 #include "Entity.h"
 #include "../Engine/Engine.h"
-#include "SpaceObjects/ObjectTypes/ObjectType.h"
 
 #include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
 #include "SpaceObjects/Components/UIHelperComponents/EntityIconComponent.h"
@@ -30,7 +29,7 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  Entity::Entity(Entity *parent, ObjectType *type, const HString &name) :  _type(type)
+  Entity::Entity(Entity *parent, const HString &name) 
   {
     _parent = parent;
     _name = name;
@@ -114,14 +113,6 @@ namespace Helios
         return false;
       });
     }
-  }
-
-  //------------------------------------------------------------------------------  
-
-  //!Get object type
-  const ObjectType *Entity::GetType() const 
-  {
-    return _type;
   }
 
   //------------------------------------------------------------------------------  

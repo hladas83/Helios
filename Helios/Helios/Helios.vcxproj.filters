@@ -43,9 +43,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Game\SpaceObjects\ObjectTypes">
-      <UniqueIdentifier>{c18dc01c-a07a-44c9-b0fd-25e42da7761e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Engine\Shaders">
       <UniqueIdentifier>{350dc92f-d684-4701-a30e-2b07a9bbd72f}</UniqueIdentifier>
     </Filter>
@@ -108,12 +105,6 @@
     <ClCompile Include="Game\SpaceDivisions\StarSystem.cpp">
       <Filter>Source Files\Game\SpaceDivisions</Filter>
     </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\StarType.cpp">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\Star.cpp">
-      <Filter>Source Files\Game\SpaceObjects</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\DX11Draw\DrawTask.cpp">
       <Filter>Source Files\Engine\Draw</Filter>
     </ClCompile>
@@ -131,15 +122,6 @@
     </ClCompile>
     <ClCompile Include="Helios.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\OrbiterType.cpp">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\Orbiter.cpp">
-      <Filter>Source Files\Game\SpaceObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\TypesBank.cpp">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Engine.cpp">
       <Filter>Source Files\Engine</Filter>
@@ -188,9 +170,6 @@
     </ClCompile>
     <ClCompile Include="Game\Entity.cpp">
       <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\ObjectType.cpp">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
     </ClCompile>
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\OrbiterSimulation.cpp">
       <Filter>Source Files\Game\SpaceObjects\Components\MovementComponents</Filter>
@@ -257,12 +236,6 @@
     <ClInclude Include="Game\SpaceDivisions\StarSystem.h">
       <Filter>Source Files\Game\SpaceDivisions</Filter>
     </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\StarType.h">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\Star.h">
-      <Filter>Source Files\Game\SpaceObjects</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\DX11Draw\DrawTask.h">
       <Filter>Source Files\Engine\Draw</Filter>
     </ClInclude>
@@ -289,15 +262,6 @@
     </ClInclude>
     <ClInclude Include="Elementary\Singleton.h">
       <Filter>Source Files\Elementary\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\OrbiterType.h">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\Orbiter.h">
-      <Filter>Source Files\Game\SpaceObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\TypesBank.h">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Engine.h">
       <Filter>Source Files\Engine</Filter>
@@ -355,9 +319,6 @@
     </ClInclude>
     <ClInclude Include="Elementary\IItemsBank\ItemsBankBase.h">
       <Filter>Source Files\Elementary\ItemsBankBase</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\ObjectType.h">
-      <Filter>Source Files\Game\SpaceObjects\ObjectTypes</Filter>
     </ClInclude>
     <ClInclude Include="Elementary\SmartPointers\InitPtr.h">
       <Filter>Source Files\Elementary\SmartPointers</Filter>

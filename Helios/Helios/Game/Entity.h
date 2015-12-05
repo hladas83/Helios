@@ -8,7 +8,6 @@
 
 #include "../../Elementary/Types.h"
 #include "SpaceObjects/Components/MovementComponents/PlainSimulation.h"
-#include "SpaceObjects/ObjectTypes/ObjectType.h"
 #include "../Engine/Components/ComponentHolder.h"
 
 #include <string>
@@ -22,7 +21,6 @@ namespace Helios
   //===================================================================================================
   // forward declared dependencies
 
-  class ObjectType;
   class PlainSimulation;
   class RenderObject;
   class UIBasicInfo;
@@ -36,8 +34,6 @@ namespace Helios
     typedef Component base;
 
   protected:
-    //! object template
-    Ref<ObjectType> _type;
     //! simulation type
     Ref<PlainSimulation> _movementSimulation;
     //! object shape/shader/texture description
@@ -56,11 +52,8 @@ namespace Helios
 
   public:
     Entity();
-    Entity(Entity *parent, ObjectType *type, const HString &name);
+    Entity(Entity *parent, const HString &name);
     virtual ~Entity();
-
-    //!Get object type
-    const ObjectType *GetType() const;
 
     //!return config class name
     const HString GetName() const {return _name;};

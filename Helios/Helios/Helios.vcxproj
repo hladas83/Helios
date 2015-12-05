@@ -138,12 +138,6 @@
     <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\EntityIconComponent.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\EntityOrbitComponent.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\UIBasicInfo.cpp" />
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\ObjectType.cpp" />
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\TypesBank.cpp" />
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\OrbiterType.cpp" />
-    <ClCompile Include="Game\SpaceObjects\ObjectTypes\StarType.cpp" />
-    <ClCompile Include="Game\SpaceObjects\Orbiter.cpp" />
-    <ClCompile Include="Game\SpaceObjects\Star.cpp" />
     <ClCompile Include="Helios.cpp" />
     <ClCompile Include="Test\Test.cpp" />
   </ItemGroup>
@@ -199,12 +193,6 @@
     <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\EntityIconComponent.h" />
     <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\EntityOrbitComponent.h" />
     <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\UIBasicInfo.h" />
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\ObjectType.h" />
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\TypesBank.h" />
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\OrbiterType.h" />
-    <ClInclude Include="Game\SpaceObjects\ObjectTypes\StarType.h" />
-    <ClInclude Include="Game\SpaceObjects\Orbiter.h" />
-    <ClInclude Include="Game\SpaceObjects\Star.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Test\Test.h" />
   </ItemGroup>

@@ -1,6 +1,5 @@
 #include "OrbiterSimulation.h"
 #include "Entity.h"
-#include "SpaceObjects/Orbiter.h"
 #include "../../../Engine/Engine.h"
 
 namespace Helios

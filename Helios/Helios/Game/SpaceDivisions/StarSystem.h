@@ -55,7 +55,7 @@ namespace Helios
 
   public:
     StarSystem();
-    StarSystem(Entity *parent, ObjectType *type, const HString &name);
+    StarSystem(Entity *parent, const HString &name);
 
     virtual ~StarSystem();
 

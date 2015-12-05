@@ -1,7 +1,5 @@
 #include "../../Common.h"
 #include "StarSystem.h"
-#include "../SpaceObjects/Orbiter.h"
-#include "../SpaceObjects/ObjectTypes/TypesBank.h"
 #include "../../Engine/Engine.h"
 #include "../Game.h"
 
@@ -19,7 +17,7 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  StarSystem::StarSystem(Entity *parent, ObjectType *type, const HString &name) : Entity(parent, type, name)
+  StarSystem::StarSystem(Entity *parent, const HString &name) : Entity(parent, name)
   {
     InitClass();
   };
@@ -51,7 +49,7 @@ namespace Helios
           if(!itemStarsArray.IsString()) continue;
 
           //create star
-          Ref<Entity> star = GGame->GTypes()->CreateObject(this, itemStarsArray.GetValue(HString("")));
+          Ref<Entity> star = new Entity(this, itemStarsArray.GetValue(HString("")));
           if(star) _objects[ETStars].push_front(star);
         }
       }
@@ -66,7 +64,7 @@ namespace Helios
           if(!itemPlanetsArray.IsString()) continue;
 
           //create planet
-          Ref<Entity> planet = GGame->GTypes()->CreateObject(this, itemPlanetsArray.GetValue(HString("")));
+          Ref<Entity> planet = new Entity(this, itemPlanetsArray.GetValue(HString("")));
           if(planet) _objects[ETPlanets].push_front(planet);
         }
       }

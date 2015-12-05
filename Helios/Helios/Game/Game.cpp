@@ -4,7 +4,6 @@
 #include "Camera/Camera.h"
 #include "SpaceDivisions/Space.h"
 #include "../Engine/Engine.h"
-#include "SpaceObjects/ObjectTypes/TypesBank.h"
 
 namespace Helios
 {
@@ -33,17 +32,9 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  TypesBank *Game::GTypes() const  
-  {
-    return TypesBank::GetInstance();
-  }
-
-  //------------------------------------------------------------------------------
-
   bool Game::Init() 
   {
     GSpace()->Init(); 
-    GTypes()->Init(); 
 
     _camera = new Camera();
     return true;
@@ -55,7 +46,6 @@ namespace Helios
   void Game::CleanUp()
   {
     Space::Release(); 
-    TypesBank::Release(); 
   };
 
   //------------------------------------------------------------------------------

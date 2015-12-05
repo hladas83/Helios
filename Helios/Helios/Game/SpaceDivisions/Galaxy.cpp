@@ -86,7 +86,7 @@ namespace Helios
 
   };
 
-  Galaxy::Galaxy(Entity *parent, ObjectType *type, const HString &name) : Entity(parent, type, name)
+  Galaxy::Galaxy(Entity *parent, const HString &name) : Entity(parent, name)
   {
     InitClass();
   }
@@ -105,7 +105,7 @@ namespace Helios
           const WParamItem itemStarsystemsArray = itemStarsystems.ReadArrayValue(i);
           if(!itemStarsystemsArray.IsString()) continue;
           //create new galaxy
-          Ref<StarSystem> starSystem(new StarSystem(this, nullptr,itemStarsystemsArray.GetValue(HString(""))));
+          Ref<StarSystem> starSystem(new StarSystem(this, itemStarsystemsArray.GetValue(HString(""))));
           //and make it active
           _starSystems.push_front(starSystem);
           if(_starSystems.size() == 1) SetActiveStarSystem(starSystem);

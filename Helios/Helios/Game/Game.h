@@ -16,7 +16,6 @@ namespace Helios
   //===================================================================================================
   // forward declared dependencies
 
-  class TypesBank;
   class Space;
 
   //===================================================================================================
@@ -34,8 +33,6 @@ namespace Helios
 
     //! world representation
     __forceinline Space *GSpace() const;
-    //! object types bank
-    __forceinline TypesBank *GTypes() const;  
 
     //!Delete all types and objects
     void CleanUp();

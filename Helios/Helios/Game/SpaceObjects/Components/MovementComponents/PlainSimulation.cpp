@@ -12,7 +12,7 @@ namespace Helios
     if(strcmpi(name.data(),"star") == 0) return new StarSimulation(simulationowner, simulationCfg);
     else if(strcmpi(name.data(),"orbiter") == 0) return new OrbiterSimulation(simulationowner, simulationCfg);
     else if(strcmpi(name.data(),"starSystem") == 0) return new StarSystemSimulation(simulationowner, simulationCfg); 
-    else return nullptr;
+    else return new PlainSimulation(simulationowner, simulationCfg);
   };
 
   //------------------------------------------------------------------------------  

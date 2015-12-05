@@ -45,7 +45,7 @@ namespace Helios
 
   public:
     Galaxy();
-    Galaxy(Entity *parent, ObjectType *type, const HString &name);
+    Galaxy(Entity *parent, const HString &name);
 
     virtual ~Galaxy();
 
