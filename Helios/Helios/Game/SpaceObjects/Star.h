@@ -7,7 +7,7 @@
 // included dependencies
 
 #include "../../common.h"
-#include "../SpaceObjects/SpaceObjectBase.h"
+#include "../Entity.h"
 
 //===================================================================================================
 // forward declared dependencies
@@ -20,9 +20,9 @@ namespace Helios
 //===================================================================================================
 //star object
 
-  class Star : public SpaceObjectBase
+  class Star : public Entity
   {
-    typedef SpaceObjectBase base;
+    typedef Entity base;
 
   private:
     //! orbiters that belongs to star

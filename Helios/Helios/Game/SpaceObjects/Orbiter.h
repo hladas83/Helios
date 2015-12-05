@@ -7,7 +7,7 @@
 // included dependencies
 
 #include "../../common.h"
-#include "../SpaceObjects/SpaceObjectBase.h"
+#include "../Entity.h"
 
 namespace Helios
 {
@@ -21,9 +21,9 @@ namespace Helios
   //===================================================================================================
   //orbiter object
 
-  class Orbiter : public SpaceObjectBase
+  class Orbiter : public Entity
   {
-    typedef SpaceObjectBase base;
+    typedef Entity base;
 
   private:
     //! orbiters that belongs to orbiter (moons, stations,....)

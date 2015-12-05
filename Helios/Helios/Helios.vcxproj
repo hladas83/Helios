@@ -71,8 +71,10 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11d.lib;d3dx9d.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;assimp.lib;CEGUIBase-0_d.lib;CEGUIDirect3D11Renderer-0_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11d.lib;d3dx9d.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,8 +96,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11.lib;d3dx9.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;assimp.lib;CEGUIBase-0.lib;CEGUIDirect3D11Renderer-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11.lib;d3dx9.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -138,7 +142,6 @@
     <ClCompile Include="Game\SpaceObjects\ObjectTypes\OrbiterType.cpp" />
     <ClCompile Include="Game\SpaceObjects\ObjectTypes\StarType.cpp" />
     <ClCompile Include="Game\SpaceObjects\Orbiter.cpp" />
-    <ClCompile Include="Game\SpaceObjects\SpaceObjectBase.cpp" />
     <ClCompile Include="Game\SpaceObjects\Star.cpp" />
     <ClCompile Include="Helios.cpp" />
     <ClCompile Include="Test\Test.cpp" />
@@ -199,28 +202,9 @@
     <ClInclude Include="Game\SpaceObjects\ObjectTypes\OrbiterType.h" />
     <ClInclude Include="Game\SpaceObjects\ObjectTypes\StarType.h" />
     <ClInclude Include="Game\SpaceObjects\Orbiter.h" />
-    <ClInclude Include="Game\SpaceObjects\SpaceObjectBase.h" />
     <ClInclude Include="Game\SpaceObjects\Star.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Test\Test.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Engine\Shapes\Effects\Planet.fx">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
-</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Engine\Shapes\Effects\Line.fx">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
-</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Game\CoreCfg\core.hcf">
@@ -259,25 +243,6 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Engine\Shapes\Effects\Star.fx">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
-</Command>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Engine\Shapes\Effects\Atmosphere.fx">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
-</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="Game\CoreCfg\typesInfo.hcf">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/Configs/%(Filename)%(Extension)"
@@ -288,12 +253,25 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Engine\Shapes\Effects\Icon.fx">
+    <CustomBuild Include="Engine\Shaders\Effects\Atmosphere.fx">
       <FileType>Document</FileType>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/GameData/fx/%(Filename)%(Extension);%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copy "%(FullPath)"  "$(OutDir)/GameData/fx/%(Filename)%(Extension)"
-</Command>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="Engine\Shaders\Effects\Icon.fx">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="Engine\Shaders\Effects\Line.fx">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="Engine\Shaders\Effects\Planet.fx">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="Engine\Shaders\Effects\Star.fx">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

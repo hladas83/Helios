@@ -8,7 +8,7 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  EntityOrbitComponent::EntityOrbitComponent(Component *parent, WParamItem &entityConfig)
+  EntityOrbitComponent::EntityOrbitComponent(ComponentHolder *parent, WParamItem &entityConfig)
   {
     _parent = parent;
 

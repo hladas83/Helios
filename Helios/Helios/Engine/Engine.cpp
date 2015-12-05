@@ -48,10 +48,10 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  UI *Engine::GUI() const 
-  {
-    return UI::GetInstance();
-  } 
+  //UI *Engine::GUI() const 
+  //{
+  //  return UI::GetInstance();
+  //} 
 
   //------------------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ namespace Helios
     GShapes()->Init(); 
     GShaders()->Init();
     GTextures()->Init();
-    GUI()->Init();
+   // GUI()->Init();
     return true;
   };
 

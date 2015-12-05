@@ -4,6 +4,10 @@
 #include "../Engine/Engine.h"
 #include "SpaceObjects/ObjectTypes/ObjectType.h"
 
+#include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
+#include "SpaceObjects/Components/UIHelperComponents/EntityIconComponent.h"
+
+
 namespace Helios
 {
 
@@ -40,9 +44,27 @@ namespace Helios
     WParamItem simulationCfg = _entityConfig >> "simulation"; 
     _movementSimulation = SimulationFactory::CreateSimulationClass(this, simulationType, simulationCfg);
 
-
-
     _size = _entityConfig.ReadValue("size", 1.0f);
+
+
+    HString infoType = _entityConfig.ReadValue(HString("infoType"), HString("planetInfoType"));
+    WParamItem infoTypeCfg = GCoreConfig >> infoType;
+
+    EntityIconComponent *entityIconComponent = new EntityIconComponent(this, _entityConfig);
+    _componentList.push_back(entityIconComponent);
+
+    _UIBasicInfo = new UIBasicInfo();
+
+    //load orbiters
+    const WParamItem itemColor = infoTypeCfg >> "color";
+    if (itemColor.IsArray() && itemColor.ArraySize() == 4)
+    {
+      _UIBasicInfo->SetInfoColor(HColor(
+        itemColor.ReadArrayValue(0).GetValue<float>(),
+        itemColor.ReadArrayValue(1).GetValue<float>(),
+        itemColor.ReadArrayValue(2).GetValue<float>(),
+        itemColor.ReadArrayValue(3).GetValue<float>()));
+    }
   }
 
   //------------------------------------------------------------------------------  
@@ -64,6 +86,10 @@ namespace Helios
 
   void Entity::Simulate(float deltaT)
   {
+    if (GetMovementSimulation())
+    {
+      GetMovementSimulation()->Simulate(this, deltaT);
+    }
     ForEachComponent([deltaT](Ref<Component> component) {  component->Simulate(deltaT); });
   }
 

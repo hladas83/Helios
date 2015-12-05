@@ -51,7 +51,7 @@ namespace Helios
     //! shaders
     TexturesBank *GTextures() const;
     //! ui
-    UI *Engine::GUI() const;
+    //UI *Engine::GUI() const;
     //! textures
     //__forceinline FileServer *GFileServer() const { return FileServer::GetFileServer(); }
 #pragma endregion

@@ -7,7 +7,7 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  EntityIconComponent::EntityIconComponent(Component *parent, WParamItem &entityConfig)
+  EntityIconComponent::EntityIconComponent(ComponentHolder *parent, WParamItem &entityConfig)
   {
     _parent = parent;
 
@@ -38,6 +38,7 @@ namespace Helios
     {
       DrawContext context = DrawContext(_iconRenderObject, entity->GetRenderVisualState()->_frame);
       context.SetScale(0.02f / GEngine->GDraw()->GetAspectRatio(), 0.02f, 1.0f);
+      //context.SetColor(_iconRenderObject->GetInfoColor());
       GEngine->GDraw()->RenderObject(DrawContext(context));
     }
   }

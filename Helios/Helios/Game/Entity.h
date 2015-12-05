@@ -25,11 +25,12 @@ namespace Helios
   class ObjectType;
   class PlainSimulation;
   class RenderObject;
+  class UIBasicInfo;
 
   //===================================================================================================
   //basic object
 
-  class Entity : public Component, public ComponentHolder, public OLinkBase<Entity>
+  class Entity : public ComponentHolder, public OLinkBase<Entity>
   {
     typedef Component base;
 
@@ -42,6 +43,9 @@ namespace Helios
     Ref<PlainSimulation> _movementSimulation;
     //! object shape/shader/texture description
     std::vector<Ref<RenderObject>> _renderObjects;
+
+    //! object UI description
+    Ref<UIBasicInfo> _UIBasicInfo;
 
     //! object scale
     float _size;
