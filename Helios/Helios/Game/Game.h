@@ -31,7 +31,6 @@ namespace Helios
     Game();
     virtual ~Game();
     bool Init();
-    void ReInit();
 
     //! world representation
     __forceinline Space *GSpace() const;

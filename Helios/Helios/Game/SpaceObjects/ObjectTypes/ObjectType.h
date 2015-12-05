@@ -30,7 +30,6 @@ namespace Helios
   public:
     ObjectType(HString name);
     virtual ~ObjectType();
-    virtual void ReInit();
 
     //------------------------------------------------------------------------------
     //! create entity of this type

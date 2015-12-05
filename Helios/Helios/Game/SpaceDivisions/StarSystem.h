@@ -56,7 +56,6 @@ namespace Helios
   public:
     StarSystem();
     StarSystem(Entity *parent, ObjectType *type, const HString &name);
-    virtual void ReInit() override;
 
     virtual ~StarSystem();
 

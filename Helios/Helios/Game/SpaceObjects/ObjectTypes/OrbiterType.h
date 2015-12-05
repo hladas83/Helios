@@ -33,7 +33,6 @@ namespace Helios
   public:
     OrbiterType(HString name);
     virtual ~OrbiterType();
-    virtual void ReInit() override;
 
     //------------------------------------------------------------------------------
     //! create entity of this type

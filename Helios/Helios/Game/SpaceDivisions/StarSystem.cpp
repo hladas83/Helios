@@ -73,14 +73,6 @@ namespace Helios
     }
   }
 
-  //------------------------------------------------------------------------------  
-
-  void StarSystem::ReInit()
-  {
-    base::ReInit();
-    InitClass();
-  }
-
   //------------------------------------------------------------------------------
 
   StarSystem::~StarSystem()
@@ -103,6 +95,7 @@ namespace Helios
 
   void StarSystem::Simulate(float deltaT)
   {
+    base::Simulate(deltaT);
     ForEachEntity([deltaT](Ref<Entity> entity) {  entity->Simulate(deltaT); });
   }
 
@@ -122,10 +115,7 @@ namespace Helios
     CheckNull(GEngine->GDraw());
     CheckNull(_movementSimulation);
 
-    DrawContext context = DrawContext(GetRenderObject(0), GetRenderVisualState()->_frame);
-    context.SetScale(_size);
-
-    if(GetRenderObjectCount() > 0) GEngine->GDraw()->RenderObject(context);
+    base::Draw();
     ForEachEntity([](Ref<Entity> entity) {  entity->Draw(); });
   }
 

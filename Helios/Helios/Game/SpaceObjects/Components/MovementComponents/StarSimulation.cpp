@@ -27,14 +27,6 @@ namespace Helios
     _siderealRotationPeriod = _simulationConfig.ReadValue("siderealRotationPeriod", 0.0f);
   }
 
-  //------------------------------------------------------------------------------  
-
-  void StarSimulation::ReInit()
-  {
-    base::ReInit();
-    InitClass();
-  }
-
   //------------------------------------------------------------------------------
 
   void StarSimulation::Simulate(Entity *simulationParent, float deltaT) 

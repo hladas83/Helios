@@ -26,6 +26,7 @@ namespace Helios
   class PlainSimulation;
   class RenderObject;
   class UIBasicInfo;
+  class OrbitersComponent;
 
   //===================================================================================================
   //basic object
@@ -37,15 +38,10 @@ namespace Helios
   protected:
     //! object template
     Ref<ObjectType> _type;
-    //! hiearchy parent (to whom entity belongs)
-    OLink<Entity> _parent;
     //! simulation type
     Ref<PlainSimulation> _movementSimulation;
     //! object shape/shader/texture description
     std::vector<Ref<RenderObject>> _renderObjects;
-
-    //! object UI description
-    Ref<UIBasicInfo> _UIBasicInfo;
 
     //! object scale
     float _size;
@@ -63,16 +59,11 @@ namespace Helios
     Entity(Entity *parent, ObjectType *type, const HString &name);
     virtual ~Entity();
 
-    virtual void ReInit();
-
     //!Get object type
     const ObjectType *GetType() const;
 
     //!return config class name
     const HString GetName() const {return _name;};
-    //! retrun hiearchy parent
-    Entity *GetParent() {return _parent.GetObj();}
-    const Entity *GetParent() const {return _parent.GetObj();}
 
     //! object movement simulation class
     PlainSimulation *GetMovementSimulation() const;

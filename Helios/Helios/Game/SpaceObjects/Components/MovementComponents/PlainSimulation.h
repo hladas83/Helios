@@ -74,7 +74,6 @@ namespace Helios
   public:
     PlainSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg);
     virtual ~PlainSimulation();
-    virtual void ReInit();
 
     Entity *GetSimulationOwner() {return _simulationOwner.GetObj();};
     const Entity *GetSimulationOwner() const {return _simulationOwner.GetObj();};

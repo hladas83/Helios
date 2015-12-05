@@ -130,6 +130,7 @@
     <ClCompile Include="Game\SpaceDivisions\Galaxy.cpp" />
     <ClCompile Include="Game\SpaceDivisions\Space.cpp" />
     <ClCompile Include="Game\SpaceDivisions\StarSystem.cpp" />
+    <ClCompile Include="Game\SpaceObjects\Components\GenericComponents\OrbitersComponent.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\OrbiterSimulation.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\PlainSimulation.cpp" />
     <ClCompile Include="Game\SpaceObjects\Components\MovementComponents\StarSimulation.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="Game\SpaceDivisions\Galaxy.h" />
     <ClInclude Include="Game\SpaceDivisions\Space.h" />
     <ClInclude Include="Game\SpaceDivisions\StarSystem.h" />
+    <ClInclude Include="Game\SpaceObjects\Components\GenericComponents\OrbitersComponent.h" />
     <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\OrbiterSimulation.h" />
     <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\PlainSimulation.h" />
     <ClInclude Include="Game\SpaceObjects\Components\MovementComponents\StarSimulation.h" />

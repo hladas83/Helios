@@ -26,14 +26,6 @@ namespace Helios
   {
   }
 
-  //------------------------------------------------------------------------------  
-
-  void StarSystemSimulation::ReInit()
-  {
-    base::ReInit();
-    InitClass();
-  }
-
   //------------------------------------------------------------------------------
 
   void StarSystemSimulation::Simulate(Entity *simulationParent, float deltaT) 

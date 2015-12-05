@@ -29,7 +29,6 @@ namespace Helios
   public:
     StarSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg);
     virtual ~StarSimulation();
-    virtual void ReInit() override;
 
     virtual void Simulate(Entity *simulationParent, float deltaT) override;
 

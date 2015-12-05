@@ -40,13 +40,6 @@ namespace Helios
 		_inclination = DEG2RAD(_simulationConfig.ReadValue("inclination", 0.0f));
   }
 
-  //------------------------------------------------------------------------------  
-
-  void OrbiterSimulation::ReInit()
-  {
-    base::ReInit();
-    InitClass();
-  }
 
   //------------------------------------------------------------------------------
 

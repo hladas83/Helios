@@ -94,6 +94,9 @@
     <Filter Include="Source Files\Engine\Components">
       <UniqueIdentifier>{f81ebb4b-b1b6-4f54-902f-2de339f2eb45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game\SpaceObjects\Components\GenericComponents">
+      <UniqueIdentifier>{921691fb-d6f0-4634-a2d5-a3ab53d673f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\SpaceDivisions\Galaxy.cpp">
@@ -221,6 +224,9 @@
     </ClCompile>
     <ClCompile Include="Game\SpaceObjects\Components\UIHelperComponents\EntityOrbitComponent.cpp">
       <Filter>Source Files\Game\SpaceObjects\Components\UIHelperComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\SpaceObjects\Components\GenericComponents\OrbitersComponent.cpp">
+      <Filter>Source Files\Game\SpaceObjects\Components\GenericComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -397,6 +403,9 @@
     </ClInclude>
     <ClInclude Include="Game\SpaceObjects\Components\UIHelperComponents\EntityOrbitComponent.h">
       <Filter>Source Files\Game\SpaceObjects\Components\UIHelperComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SpaceObjects\Components\GenericComponents\OrbitersComponent.h">
+      <Filter>Source Files\Game\SpaceObjects\Components\GenericComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -41,7 +41,6 @@ namespace Helios
   public:
     OrbiterSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg);
     virtual ~OrbiterSimulation();
-    virtual void ReInit() override;
 
     //------------------------------------------------------------------------------
     __forceinline float GetEllipseA() const  {return _ellipseA;};

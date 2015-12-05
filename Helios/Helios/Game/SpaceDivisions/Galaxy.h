@@ -46,7 +46,6 @@ namespace Helios
   public:
     Galaxy();
     Galaxy(Entity *parent, ObjectType *type, const HString &name);
-    virtual void ReInit() override;
 
     virtual ~Galaxy();
 

@@ -6,6 +6,8 @@
 
 #include "SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
 #include "SpaceObjects/Components/UIHelperComponents/EntityIconComponent.h"
+#include "SpaceObjects/Components/GenericComponents/OrbitersComponent.h"
+#include "SpaceObjects/Components/UIHelperComponents/EntityOrbitComponent.h"
 
 
 namespace Helios
@@ -28,8 +30,9 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  Entity::Entity(Entity *parent, ObjectType *type, const HString &name) : _parent(parent), _type(type)
+  Entity::Entity(Entity *parent, ObjectType *type, const HString &name) :  _type(type)
   {
+    _parent = parent;
     _name = name;
     InitClass();
   };
@@ -41,37 +44,76 @@ namespace Helios
     _entityConfig = GCoreConfig >> _name;
 
     HString simulationType = _entityConfig.ReadValue(HString("simulationType"), HString(""));
-    WParamItem simulationCfg = _entityConfig >> "simulation"; 
+    WParamItem simulationCfg = _entityConfig >> "simulation";
     _movementSimulation = SimulationFactory::CreateSimulationClass(this, simulationType, simulationCfg);
-
     _size = _entityConfig.ReadValue("size", 1.0f);
 
 
-    HString infoType = _entityConfig.ReadValue(HString("infoType"), HString("planetInfoType"));
-    WParamItem infoTypeCfg = GCoreConfig >> infoType;
+    {
+      HString infoType = _entityConfig.ReadValue(HString("infoType"), HString("planetInfoType"));
+      WParamItem infoTypeCfg = GCoreConfig >> infoType;
 
-    EntityIconComponent *entityIconComponent = new EntityIconComponent(this, _entityConfig);
-    _componentList.push_back(entityIconComponent);
+      EntityIconComponent *entityIconComponent = new EntityIconComponent(this, _entityConfig);
+      _componentList.push_back(entityIconComponent);
 
-    _UIBasicInfo = new UIBasicInfo();
+      //load UI info
+      const WParamItem itemColor = infoTypeCfg >> "color";
+      if (itemColor.IsArray() && itemColor.ArraySize() == 4)
+      {
+        UIBasicInfo *uiBasicInfo = new UIBasicInfo();
+        uiBasicInfo->SetInfoColor(HColor(
+          itemColor.ReadArrayValue(0).GetValue<float>(),
+          itemColor.ReadArrayValue(1).GetValue<float>(),
+          itemColor.ReadArrayValue(2).GetValue<float>(),
+          itemColor.ReadArrayValue(3).GetValue<float>()));
+
+        _componentList.push_back(uiBasicInfo);
+      }
+    }
 
     //load orbiters
-    const WParamItem itemColor = infoTypeCfg >> "color";
-    if (itemColor.IsArray() && itemColor.ArraySize() == 4)
-    {
-      _UIBasicInfo->SetInfoColor(HColor(
-        itemColor.ReadArrayValue(0).GetValue<float>(),
-        itemColor.ReadArrayValue(1).GetValue<float>(),
-        itemColor.ReadArrayValue(2).GetValue<float>(),
-        itemColor.ReadArrayValue(3).GetValue<float>()));
+    WParamItem orbiters = _entityConfig >> "orbiters";
+    if(orbiters.IsValid())
+    { 
+      OrbitersComponent *orbitersComponent = new OrbitersComponent(this, _entityConfig);
+      _componentList.push_back(orbitersComponent);
     }
-  }
 
-  //------------------------------------------------------------------------------  
+    EntityOrbitComponent *entityOrbiterComponent = new EntityOrbitComponent(this, _entityConfig);
+    _componentList.push_back(entityOrbiterComponent);
 
-  void Entity::ReInit()
-  {
-    InitClass();
+    // read all render objects
+    WParamItem renderObjectsCfg = _entityConfig >> "renderObjects";
+    if (renderObjectsCfg.IsClass())
+    {
+      ParamClass *renderObjectsClass = dyn_cast<ParamClass>(renderObjectsCfg.GetRawData());
+      renderObjectsClass->ForEachItem([this](Ref<IParamItem> item)
+      {
+        WParamItem witem = WParamItem(item);
+        WParamItem texturesCfg = witem >> "textures";
+
+        std::vector<HString> textures;
+        if (texturesCfg.IsArray())
+        {
+          for (int i = 0; i < texturesCfg.ArraySize(); ++i)
+          {
+            textures.push_back(texturesCfg.ReadArrayValue(i).GetValue<HString>());
+          }
+        }
+
+        HString shape = witem.ReadValue(HString("shape"), HString("GameData/models/sphere.3DS"));
+        HString shader = witem.ReadValue(HString("shader"), HString("GameData/FX/Planet.fx"));
+        float scale = witem.ReadValue(HString("scale"), 1.0f);
+        int renderPass = (int)(witem.ReadValue(HString("renderPass"), 0.0f));
+
+        Matrix4 transform;
+        transform.SetIdentityMatrix();
+        transform.SetScale(scale);
+        //todo enum cast
+        _renderObjects.push_back(new RenderObject(shape, textures, shader, transform, (RenderObject::ERenderPass)renderPass));
+        return false;
+      });
+    }
   }
 
   //------------------------------------------------------------------------------  
@@ -105,6 +147,13 @@ namespace Helios
 
   void Entity::Draw()
   {
+    for (int i = 0; i < GetRenderObjectCount(); ++i)
+    {
+      DrawContext context = DrawContext(GetRenderObject(i), GetRenderVisualState()->_frame);
+      context.SetScale((1 + 0.04f*i)*_size);
+      GEngine->GDraw()->RenderObject(DrawContext(context));
+    }
+
     ForEachComponent([](Ref<Component> component) {  component->Draw(); });
   }
 

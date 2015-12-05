@@ -30,7 +30,6 @@ typedef ObjectType base;
 public:
   StarType(HString name);
   virtual ~StarType();
-  virtual void ReInit() override;
 
   //------------------------------------------------------------------------------
   //! create entity of this type

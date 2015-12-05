@@ -54,7 +54,7 @@ namespace Helios
 
   public:
     virtual WParamItem operator >> (const HString &name) { return WParamItem(_coreClass >> name);};
-   
+
     USE_CASTING_ROOT;
   };
 

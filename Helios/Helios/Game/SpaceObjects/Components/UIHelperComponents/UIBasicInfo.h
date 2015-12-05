@@ -4,6 +4,7 @@
 // included dependencies
 
 #include "../../../common.h"
+#include "../Engine/Components/ComponentHolder.h"
 
 //===================================================================================================
 // forward declared dependencies
@@ -11,7 +12,7 @@
 namespace Helios
 {
 
-  class UIBasicInfo : public RefCount
+  class UIBasicInfo : public ComponentHolder
   {
   private:
     //! color in UI

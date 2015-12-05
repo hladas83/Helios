@@ -26,8 +26,6 @@ namespace Helios
     typedef Entity base;
 
   private:
-    //! orbiters that belongs to orbiter (moons, stations,....)
-    std::list<Ref<Entity>> _orbiters;
 
   private:
     // initialize this class (not virtual, so it can be called from constructor)
@@ -36,7 +34,6 @@ namespace Helios
   public:
     Orbiter(ObjectType *type, Entity *parent, const HString &name);
     virtual ~Orbiter();
-    virtual void ReInit() override;
 
     //return real type
     const OrbiterType *Type() const;

@@ -29,14 +29,6 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  void StarType::ReInit()
-  {
-    base::ReInit();
-    InitClass();
-  }
-
-  //------------------------------------------------------------------------------  
-
   Entity *StarType::CreateObject(Entity *parent, const HString &name)
   {
     return new Star(this, parent, name);

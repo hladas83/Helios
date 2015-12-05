@@ -24,13 +24,6 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  void ObjectType::ReInit()
-  {
-
-  }
-
-  //------------------------------------------------------------------------------  
-
     //! create entity of this type
    Entity *ObjectType::CreateObject(Entity *parent, const HString &name)
    {
