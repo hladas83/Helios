@@ -19,14 +19,6 @@ namespace Helios
   class PlainSimulation;
 
   //===================================================================================================
-
-  class SimulationFactory
-  {
-  public:
-    static PlainSimulation *CreateSimulationClass(Entity *simulationowner, const HString &name, const  WParamItem &simulationCfg);
-  };
-
-  //===================================================================================================
   // object state representation
 
   enum __ObejctStateTypes
@@ -67,13 +59,10 @@ namespace Helios
     // simulation confog class
     WParamItem _simulationConfig;
 
-  private:
-    // initialize this class (not virtual, so it can be called from constructor)
-    void InitClass();
-
   public:
-    PlainSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg);
+    PlainSimulation();
     virtual ~PlainSimulation();
+    virtual void InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg) ;
 
     Entity *GetSimulationOwner() {return _simulationOwner.GetObj();};
     const Entity *GetSimulationOwner() const {return _simulationOwner.GetObj();};
@@ -101,6 +90,11 @@ namespace Helios
 
     USE_CASTING_ROOT;
   };
+
+  typedef ClassFactory<PlainSimulation, HString> SimulationTypeFactory;
+#define DECL_SIMULATIONTYPE_FACTORY_REG(TYPE) static SimulationTypeFactory::RegistrationHelper<TYPE> __factoryHelper__
+#define DEF_SIMULATIONTYPE_FACTORY_REG(TYPE, VALUE)  SimulationTypeFactory::RegistrationHelper<TYPE> TYPE::__factoryHelper__(VALUE)
+
 
 } //namespace
 

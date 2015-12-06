@@ -33,7 +33,7 @@ namespace Helios
     Matrix4 transform;
     transform.SetIdentityMatrix();
     //star is just texture - so now used also for background
-    _renderObjects.push_back(new RenderObject("GameData/models/sphereFliped.3DS", textures, "GameData/FX/Star.fx", transform ));
+    _renderObjects.push_back(new RenderObject("GameData/models/sphereFliped.3DS", textures, "GameData/FX/StarSky.fx", transform ));
     _size = 10000.0f;
 
     //create all entities

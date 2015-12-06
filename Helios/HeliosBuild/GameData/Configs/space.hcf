@@ -16,5 +16,5 @@ class solarsystem
   stars[] = {"sun"}; //list of planets included 
 
   textureIn = "GameData/Textures/Milkyway/SolarSystem/starmap_g8k.jpg";
-  simulationType = "starSystem";
+  simulationType = "StarSystemSimulation";
 }

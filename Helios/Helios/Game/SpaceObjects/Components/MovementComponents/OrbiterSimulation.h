@@ -34,13 +34,11 @@ namespace Helios
 
     OLink<Entity> _gravityParent; // entity we orbit around
 
-  private:
-    // initialize this class (not virtual, so it can be called from constructor)
-    void InitClass();
 
   public:
-    OrbiterSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg);
+    OrbiterSimulation();
     virtual ~OrbiterSimulation();
+    virtual void InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg) override;
 
     //------------------------------------------------------------------------------
     __forceinline float GetEllipseA() const  {return _ellipseA;};
@@ -56,7 +54,8 @@ namespace Helios
 
     virtual void Simulate(Entity *simulationParent, float deltaT) override;
 
-    USE_CASTING(base)
+    USE_CASTING(base);
+    DECL_SIMULATIONTYPE_FACTORY_REG(OrbiterSimulation);
   };
 
 } // Helios namespace

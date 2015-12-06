@@ -1,30 +1,63 @@
-class starInfoType
+
+class basicUIIcon
 {
 	icon = "GameData/Textures/icons/planet.jpg";
+	componentType = "entityiconcomponent";
+}
+
+class starUIIcon : basicUIIcon
+{
+	icon = "GameData/Textures/icons/planet.jpg";
+}
+
+class planetUIIcon : basicUIIcon
+{
+	icon = "GameData/Textures/icons/planet.jpg";
+}
+
+class dwarfPlanetUIIcon : basicUIIcon
+{
+	icon = "GameData/Textures/icons/planet.jpg";
+}
+
+class moonInfoUIIcon : basicUIIcon
+{
+	icon = "GameData/Textures/icons/moon.jpg";
+}
+
+class cometUIIcon : basicUIIcon
+{
+	icon = "GameData/Textures/icons/planet.jpg";
+}
+
+/*-----------------------------------------------------------------------------------*/
+class basicInfoType
+{
+	color[] =  {1.0, 1.0, 0.0, 1.0};
+	componentType = "uibasicinfo";
+}
+
+class starInfoType : basicInfoType
+{
 	color[] =  {1.0, 1.0, 0.0, 1.0};
 }
 
-class planetInfoType
+class planetInfoType : basicInfoType
 {
-	icon = "GameData/Textures/icons/planet.jpg";
 	color[] = {0.0, 1.0, 0.0, 1.0};
 }
 
-class dwarfPlanetInfoType
+class dwarfPlanetInfoType : basicInfoType
 {
-	icon = "GameData/Textures/icons/planet.jpg";
 	color[] = {1.0, 0.0, 0.8, 1.0};
 }
 
-
-class moonInfoType
+class moonInfoType : basicInfoType
 {
-	icon = "GameData/Textures/icons/moon.jpg";
 	color[] = {0.0, 0.0, 1.0, 1.0};
 }
 
-class cometInfoType
+class cometInfoType : basicInfoType
 {
-	icon = "GameData/Textures/icons/planet.jpg";
 	color[] = {1.0, 1.0, 0.0, 1.0};
 }

@@ -6,12 +6,13 @@ namespace Helios
 {
 
   DEFINE_CASTING(OrbiterSimulation);
+  DEF_SIMULATIONTYPE_FACTORY_REG(OrbiterSimulation, HString("orbitersimulation"));
 
   //------------------------------------------------------------------------------
 
-  OrbiterSimulation::OrbiterSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg) : base(simulationOwner, simulationCfg)
+  OrbiterSimulation::OrbiterSimulation()
   {
-    InitClass();
+
   };
 
   //------------------------------------------------------------------------------
@@ -22,8 +23,9 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  void OrbiterSimulation::InitClass()
-  {
+  void OrbiterSimulation::InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg)
+  { 
+    base::InitClass(simulationOwner, simulationCfg);
     //read config values
     _siderealRotationPeriod = _simulationConfig.ReadValue("siderealRotationPeriod", 0.0f); 
     _orbitalPeriod = _simulationConfig.ReadValue("orbitalPeriod", 0.0f);

@@ -1,10 +1,34 @@
+class defaultPlanetComponents 
+{
+	class orbiterUIComponent
+	{
+		componentType = "entityorbitcomponent";
+	}
+
+	class UIInfoType : planetInfoType
+	{
+
+	}
+
+	class UIIcon : planetUIIcon
+	{
+
+	}
+}
+
 class defaultPlanet
 {
 	type = "orbiter";
-	simulationType = "orbiter";
+	simulationType = "OrbiterSimulation";
 	infoType = "planetInfoType";
 	size = 0.025;
+
+	class components : defaultPlanetComponents
+	{
+	}
 }
+
+
 
 class mercury : defaultPlanet
 {
@@ -22,7 +46,7 @@ class mercury : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Mercury/mercuryColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Mercury/mercuryColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -44,7 +68,7 @@ class venus : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Venus/venusColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Venus/venusColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -69,11 +93,6 @@ class earth : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Earth/earthColor.jpg";
-			textureAtmosphere = "GameData/Textures/Milkyway/SolarSystem/Earth/earthClouds.jpg";	
-			textureNight = "GameData/Textures/Milkyway/SolarSystem/Earth/earthLights.jpg";
-			textureSpecular = "GameData/Textures/Milkyway/SolarSystem/Earth/earthSpecular.jpg";	
-
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 
@@ -93,6 +112,15 @@ class earth : defaultPlanet
 			renderPass = 1;
 		}
 
+	}
+
+	class components : defaultPlanetComponents
+	{
+		class Orbiters
+		{
+			componentType = "orbitersComponent";
+			orbiters[] =  {"moon"}; //list of planets included 
+		}
 	}
 }
 
@@ -114,7 +142,7 @@ class moon : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Earth/Moon/moonColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Earth/Moon/moonColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -136,7 +164,7 @@ class mars : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Mars/marsColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Mars/marsColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -158,7 +186,7 @@ class jupiter : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Jupiter/jupiterColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Jupiter/jupiterColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -180,14 +208,14 @@ class saturn : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Saturn/saturnColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Saturn/saturnColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
 
 		class ring
 		{	
-			texture = "GameData/Textures/Milkyway/SolarSystem/Saturn/saturnRing.png";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Saturn/saturnRing.png", "", "", ""};
 			shape = "GameData/Models/ring.3DS";
 			shader = "GameData/FX/planet.fx";
 		}
@@ -209,7 +237,7 @@ class uranus : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Uranus/uranusColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Uranus/uranusColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -233,7 +261,7 @@ class neptune : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Neptune/neptuneColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Neptune/neptuneColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -257,7 +285,7 @@ class pluto : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Neptune/neptuneColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Neptune/neptuneColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -281,7 +309,7 @@ class ceres : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -305,7 +333,7 @@ class haumea : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -329,7 +357,7 @@ class makemake : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -353,7 +381,7 @@ class eris : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -379,7 +407,7 @@ class Halley : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -405,7 +433,7 @@ class Borrelly : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}
@@ -431,7 +459,7 @@ class Ikeya–Zhang : defaultPlanet
 	{
 		class planet
 		{
-			texture = "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg";
+			textures[] = { "GameData/Textures/Milkyway/SolarSystem/Pluto/plutoColor.jpg", "", "", ""};
 			shape = "GameData/Models/sphere.3DS";
 			shader = "GameData/FX/Planet.fx";
 		}

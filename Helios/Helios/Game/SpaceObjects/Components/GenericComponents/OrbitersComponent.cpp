@@ -6,10 +6,25 @@
 
 namespace Helios
 {
+  DEFINE_CASTING(OrbitersComponent);
+  DEF_COMPONENTHOLDER_FACTORY_REG(OrbitersComponent, HString("orbiterscomponent"));
 
   //------------------------------------------------------------------------------  
 
-  OrbitersComponent::OrbitersComponent(ComponentHolder *parent, WParamItem &entityConfig)
+  OrbitersComponent::OrbitersComponent()
+  {
+  }
+
+  //------------------------------------------------------------------------------  
+
+  OrbitersComponent::~OrbitersComponent()
+  {
+
+  }
+
+  //------------------------------------------------------------------------------  
+
+  void OrbitersComponent::InitClass(ComponentHolder *parent, WParamItem &entityConfig)
   {
     _parent = parent;
     Entity *entity = dyn_cast<Entity>(_parent.GetObj());
@@ -37,7 +52,7 @@ namespace Helios
               orbiretSim->SetGravityParent(entity);
             }
 
-            if (strcmpi(orbiter->GetName().data(), "earth") == 0)
+            if (strcmpi(orbiter->GetName().data(), "sun") == 0)
             {
               GGame->GetCamera()->SetTarget(orbiter);
             }
@@ -46,14 +61,6 @@ namespace Helios
       }
     }
   }
-
-  //------------------------------------------------------------------------------  
-
-  OrbitersComponent::~OrbitersComponent()
-  {
-
-  }
-
 
   //------------------------------------------------------------------------------  
 

@@ -21,6 +21,7 @@
 #include "Elementary/PerfLog.h"
 #include "Elementary/LogF.h"
 #include "Elementary/assert.h"
+#include "Elementary/ClassFactory.h"
 
 // STD thredas
 #include <thread>

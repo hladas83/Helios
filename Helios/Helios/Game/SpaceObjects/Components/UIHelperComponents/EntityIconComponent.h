@@ -15,14 +15,20 @@ namespace Helios
 
   class EntityIconComponent : public ComponentHolder
   {
+    typedef ComponentHolder base;
+
   private:
     Ref<RenderObject> _iconRenderObject;
 
   public:
-    EntityIconComponent(ComponentHolder *parent, WParamItem &entityConfig);
+    EntityIconComponent();
     ~EntityIconComponent();
+    virtual void InitClass(ComponentHolder *parent, WParamItem &entityConfig) override;
 
     virtual void Draw() override;
+
+    USE_CASTING(base);
+    DECL_COMPONENTHOLDER_FACTORY_REG(EntityIconComponent);
   };
 
  

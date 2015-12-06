@@ -23,16 +23,16 @@ namespace Helios
     float _siderealRotationPeriod; ///rotation around its axis of rotation 
 
   private:
-    // initialize this class (not virtual, so it can be called from constructor)
-    void InitClass();
 
   public:
-    StarSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg);
+    StarSimulation();
     virtual ~StarSimulation();
+    virtual void InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg) override;
 
     virtual void Simulate(Entity *simulationParent, float deltaT) override;
 
-    USE_CASTING(base)
+    USE_CASTING(base);
+    DECL_SIMULATIONTYPE_FACTORY_REG(StarSimulation);
   };
 
 } // Helios namespace

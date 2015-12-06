@@ -1,2 +1,2 @@
-#include "space.hcf"
 #include "typesInfo.hcf"
+#include "space.hcf"

@@ -42,45 +42,16 @@ namespace Helios
   {
     _entityConfig = GCoreConfig >> _name;
 
-    HString simulationType = _entityConfig.ReadValue(HString("simulationType"), HString(""));
-    WParamItem simulationCfg = _entityConfig >> "simulation";
-    _movementSimulation = SimulationFactory::CreateSimulationClass(this, simulationType, simulationCfg);
-    _size = _entityConfig.ReadValue("size", 1.0f);
-
-
+    // read simulation
     {
-      HString infoType = _entityConfig.ReadValue(HString("infoType"), HString("planetInfoType"));
-      WParamItem infoTypeCfg = GCoreConfig >> infoType;
-
-      EntityIconComponent *entityIconComponent = new EntityIconComponent(this, _entityConfig);
-      _componentList.push_back(entityIconComponent);
-
-      //load UI info
-      const WParamItem itemColor = infoTypeCfg >> "color";
-      if (itemColor.IsArray() && itemColor.ArraySize() == 4)
-      {
-        UIBasicInfo *uiBasicInfo = new UIBasicInfo();
-        uiBasicInfo->SetInfoColor(HColor(
-          itemColor.ReadArrayValue(0).GetValue<float>(),
-          itemColor.ReadArrayValue(1).GetValue<float>(),
-          itemColor.ReadArrayValue(2).GetValue<float>(),
-          itemColor.ReadArrayValue(3).GetValue<float>()));
-
-        _componentList.push_back(uiBasicInfo);
-      }
+      HString simulationType = _entityConfig.ReadValue(HString("simulationType"), HString(""));
+      WParamItem simulationCfg = _entityConfig >> "simulation";
+      _movementSimulation = SimulationTypeFactory::ConstructData(simulationType);
+      if (_movementSimulation)
+        _movementSimulation->InitClass(this, simulationCfg);
+      _size = _entityConfig.ReadValue("size", 1.0f);
     }
-
-    //load orbiters
-    WParamItem orbiters = _entityConfig >> "orbiters";
-    if(orbiters.IsValid())
-    { 
-      OrbitersComponent *orbitersComponent = new OrbitersComponent(this, _entityConfig);
-      _componentList.push_back(orbitersComponent);
-    }
-
-    EntityOrbitComponent *entityOrbiterComponent = new EntityOrbitComponent(this, _entityConfig);
-    _componentList.push_back(entityOrbiterComponent);
-
+ 
     // read all render objects
     WParamItem renderObjectsCfg = _entityConfig >> "renderObjects";
     if (renderObjectsCfg.IsClass())
@@ -110,6 +81,26 @@ namespace Helios
         transform.SetScale(scale);
         //todo enum cast
         _renderObjects.push_back(new RenderObject(shape, textures, shader, transform, (RenderObject::ERenderPass)renderPass));
+        return false;
+      });
+    }
+
+    // read all components
+    WParamItem componentsCfg = _entityConfig >> "components";
+    if (componentsCfg.IsClass())
+    {
+      ParamClass *componetsClass = dyn_cast<ParamClass>(componentsCfg.GetRawData());
+      componetsClass->ForEachItem([this](Ref<IParamItem> item)
+      {
+        WParamItem witem = WParamItem(item);
+        HString componentType = witem.ReadValue(HString("componentType"), HString(""));
+
+        ComponentHolder *componentHolder = ComponentHolderFactory::ConstructData(componentType);
+        if (componentHolder)
+        {
+          componentHolder->InitClass(this, witem);
+          _componentList.push_back(componentHolder);
+        }
         return false;
       });
     }

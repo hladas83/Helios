@@ -5,12 +5,12 @@ namespace Helios
 {
 
   DEFINE_CASTING(StarSimulation);
+  DEF_SIMULATIONTYPE_FACTORY_REG(StarSimulation, HString("starsimulation"));
 
   //------------------------------------------------------------------------------
 
-  StarSimulation::StarSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg) : base(simulationOwner, simulationCfg)
+  StarSimulation::StarSimulation()
   {
-    InitClass();
   }
 
   //------------------------------------------------------------------------------
@@ -21,8 +21,9 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  void StarSimulation::InitClass()
+  void StarSimulation::InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg)
   {
+    base::InitClass(simulationOwner, simulationCfg);
     //read config values
     _siderealRotationPeriod = _simulationConfig.ReadValue("siderealRotationPeriod", 0.0f);
   }

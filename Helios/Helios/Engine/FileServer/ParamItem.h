@@ -238,6 +238,11 @@ namespace Helios
     template<class Functor>
     bool ForEachItem(Functor &f)
     {
+      if (_parent)
+      {
+        if(_parent->ForEachItem(f))
+          return true;
+      }
       for (std::map<HString, Ref<IParamItem>>::iterator ii = _params.begin(); ii != _params.end(); ++ii)
       {
         if (f((*ii).second))

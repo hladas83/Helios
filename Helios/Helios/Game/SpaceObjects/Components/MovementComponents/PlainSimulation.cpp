@@ -7,28 +7,16 @@
 
 namespace Helios
 {
-  PlainSimulation *SimulationFactory::CreateSimulationClass(Entity *simulationowner, const HString &name, const  WParamItem &simulationCfg)
-  {
-    if(strcmpi(name.data(),"star") == 0) return new StarSimulation(simulationowner, simulationCfg);
-    else if(strcmpi(name.data(),"orbiter") == 0) return new OrbiterSimulation(simulationowner, simulationCfg);
-    else if(strcmpi(name.data(),"starSystem") == 0) return new StarSystemSimulation(simulationowner, simulationCfg); 
-    else return new PlainSimulation(simulationowner, simulationCfg);
-  };
 
   //------------------------------------------------------------------------------  
 
-  PlainSimulation::PlainSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg) : 
+  PlainSimulation::PlainSimulation() : 
     _timeSimulated(0),
-    _simulationOwner(simulationOwner),
-    _simulationConfig(simulationCfg),
     _currentRenderState(0)
   {
     _renderVisualState[0] = new ObejctState();
     _renderVisualState[1] = new ObejctState();
     _simulationState = new ObejctState();
-
-    //load configs
-    InitClass();
   };
 
   //------------------------------------------------------------------------------  
@@ -40,9 +28,10 @@ namespace Helios
 
   //------------------------------------------------------------------------------  
 
-  void PlainSimulation::InitClass()
+  void PlainSimulation::InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg)
   {
-
+    _simulationOwner = simulationOwner;
+    _simulationConfig = simulationCfg;
   }
 
 

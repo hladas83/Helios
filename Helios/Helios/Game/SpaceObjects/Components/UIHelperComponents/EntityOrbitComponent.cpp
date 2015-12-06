@@ -2,20 +2,17 @@
 #include "../Engine/Engine.h"
 #include "../Game/entity.h"
 #include "../Game/SpaceObjects/Components/MovementComponents/OrbiterSimulation.h"
+#include "../Game/SpaceObjects/Components/UIHelperComponents/UIBasicInfo.h"
 
 namespace Helios
 {
+  DEFINE_CASTING(EntityOrbitComponent);
+  DEF_COMPONENTHOLDER_FACTORY_REG(EntityOrbitComponent, HString("entityorbitcomponent"));
 
   //------------------------------------------------------------------------------  
 
-  EntityOrbitComponent::EntityOrbitComponent(ComponentHolder *parent, WParamItem &entityConfig)
+  EntityOrbitComponent::EntityOrbitComponent()
   {
-    _parent = parent;
-
-    std::vector<HString> textures;
-    Matrix4 transform;
-    transform.SetIdentityMatrix();
-    _renderOrbitObject = new RenderObject("circle", textures, "GameData/FX/Line.fx", transform, RenderObject::RPLine, RenderObject::RTLine);
   }
 
   //------------------------------------------------------------------------------  
@@ -23,6 +20,18 @@ namespace Helios
   EntityOrbitComponent::~EntityOrbitComponent()
   {
 
+  }
+
+  //------------------------------------------------------------------------------  
+
+  void EntityOrbitComponent::InitClass(ComponentHolder *parent, WParamItem &entityConfig)
+  {
+    _parent = parent;
+
+    std::vector<HString> textures;
+    Matrix4 transform;
+    transform.SetIdentityMatrix();
+    _renderOrbitObject = new RenderObject("circle", textures, "GameData/FX/Line.fx", transform, RenderObject::RPLine, RenderObject::RTLine);
   }
 
   //------------------------------------------------------------------------------  
@@ -38,6 +47,8 @@ namespace Helios
       //render orbit trajectory
       if (orbiretSim && gravityParent)
       {
+        UIBasicInfo *uiInfo = _parent->FindComponent<UIBasicInfo>();
+
         Matrix4 translateToPositionParent;
         translateToPositionParent.SetIdentityMatrix();
         translateToPositionParent.SetPosition(gravityParent->GetPosition<RenderState>());
@@ -54,7 +65,8 @@ namespace Helios
         DrawContext context = DrawContext(_renderOrbitObject, translateToPositionParent);
         context.SetScale(orbiretSim->GetEllipseA(), 1, orbiretSim->GetEllipseB());
         context.SetAnimationPeriod(entity->GetRenderVisualState()->_animationPeriod);
-      //  context.SetColor(_UIBasicInfo->GetInfoColor());
+        if(uiInfo)
+          context.SetColor(uiInfo->GetInfoColor());
 
         GEngine->GDraw()->RenderObject(context);
       }

@@ -368,6 +368,9 @@
     <ClInclude Include="Game\SpaceObjects\Components\GenericComponents\OrbitersComponent.h">
       <Filter>Source Files\Game\SpaceObjects\Components\GenericComponents</Filter>
     </ClInclude>
+    <ClInclude Include="Elementary\ClassFactory.h">
+      <Filter>Source Files\Elementary</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Game\CoreCfg\core.hcf">
@@ -400,5 +403,10 @@
     <CustomBuild Include="Engine\Shaders\Effects\Atmosphere.fx">
       <Filter>Source Files\Engine\Shaders\Effects</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Engine\Shaders\Effects\StarSky.fx">
+      <Filter>Source Files\Engine\Shaders\Effects</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

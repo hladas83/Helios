@@ -42,6 +42,7 @@ namespace Helios
   private:
     // initialize this class (not virtual, so it can be called from constructor)
     void InitClass();
+    virtual void InitClass(ComponentHolder *parent, WParamItem &entityConfig) override { Assert(false); };
 
   public:
     Galaxy();

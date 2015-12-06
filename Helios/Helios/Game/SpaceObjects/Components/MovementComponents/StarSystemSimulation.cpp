@@ -6,12 +6,13 @@ namespace Helios
 {
 
   DEFINE_CASTING(StarSystemSimulation);
+  DEF_SIMULATIONTYPE_FACTORY_REG(StarSystemSimulation, HString("starsystemsimulation"));
 
   //------------------------------------------------------------------------------
 
-  StarSystemSimulation::StarSystemSimulation(Entity *simulationOwner, const  WParamItem &simulationCfg) : base(simulationOwner, simulationCfg)
+  StarSystemSimulation::StarSystemSimulation()
   {
-    InitClass();
+
   } 
 
   //------------------------------------------------------------------------------
@@ -22,8 +23,9 @@ namespace Helios
 
   //------------------------------------------------------------------------------
 
-  void StarSystemSimulation::InitClass()
-  {
+  void StarSystemSimulation::InitClass(Entity *simulationOwner, const  WParamItem &simulationCfg)
+  {    
+    base::InitClass(simulationOwner, simulationCfg);
   }
 
   //------------------------------------------------------------------------------

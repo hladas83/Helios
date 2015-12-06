@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="Elementary\Assert.h" />
+    <ClInclude Include="Elementary\ClassFactory.h" />
     <ClInclude Include="Elementary\Color.h" />
     <ClInclude Include="Elementary\dynCast.h" />
     <ClInclude Include="Elementary\IItemsBank\ItemsBankBase.h" />
@@ -262,6 +263,11 @@
     <CustomBuild Include="Engine\Shaders\Effects\Star.fx">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Engine\Shaders\Effects\StarSky.fx">
+      <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
