@@ -403,10 +403,6 @@
     <CustomBuild Include="Engine\Shaders\Effects\Atmosphere.fx">
       <Filter>Source Files\Engine\Shaders\Effects</Filter>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Engine\Shaders\Effects\StarSky.fx">
-      <Filter>Source Files\Engine\Shaders\Effects</Filter>
-    </FxCompile>
+    <CustomBuild Include="Engine\Shaders\Effects\StarSky.fx" />
   </ItemGroup>
 </Project>
