@@ -78,7 +78,7 @@ namespace Helios
     {
       if(_movementSimulation) return _movementSimulation->GetPosition<type>(); 
       return Vector3(0,0,0);
-    };
+    };  
 
     //set object scale
     __forceinline float GetSize() {return _size;};
