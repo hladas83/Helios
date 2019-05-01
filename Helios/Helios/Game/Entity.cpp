@@ -63,7 +63,7 @@ namespace Helios
         WParamItem texturesCfg = witem >> "textures";
 
         std::vector<HString> textures;
-        if (texturesCfg.IsArray())
+        if (texturesCfg.IsArray())  
         {
           for (int i = 0; i < texturesCfg.ArraySize(); ++i)
           {
