@@ -85,8 +85,6 @@ namespace Helios
     __forceinline void SetSize(float size) {_size = size;};
       
 
-
-
     //! component Simulate loop
     virtual void Simulate(float deltaT) override;
     virtual void PostSimulate() override;
