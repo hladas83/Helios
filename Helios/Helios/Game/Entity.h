@@ -83,7 +83,7 @@ namespace Helios
     //set object scale
     __forceinline float GetSize() {return _size;};
     __forceinline void SetSize(float size) {_size = size;};
-  
+    
     //! component Simulate loop
     virtual void Simulate(float deltaT) override;
     virtual void PostSimulate() override;
